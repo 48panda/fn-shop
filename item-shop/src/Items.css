@@ -47,7 +47,7 @@
 }
 
 .item .gradient {
-    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100px) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
+    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
 }
 .item {
     overflow: hidden;
