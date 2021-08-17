@@ -3,6 +3,7 @@ import { bindAll } from 'underscore'
 
 export class FortniteItem extends Component {
     render() {
+        const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         console.log(this.props.data)
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[0]
@@ -16,7 +17,7 @@ export class FortniteItem extends Component {
                 WebkitMaskImage:`radial-gradient(circle ${nda.scalings.Spotlight_Size*Math.max(...this.props.data.size)/100}px at ${nda.scalings.Spotlight_Position_X}% ${nda.scalings.Spotlight_Position_Y}%, black,transparent)`,
                 filter:`brightness(${1+nda.scalings.Spotlight_Intensity/100})`
                 }}> </div>
-            {nda.scalings["Streak Angle"]?<div className="marvel"></div>:null}
+            {nda.scalings["Streak Angle"]?<><div className="marvelR"></div><div className="marvelG"></div></>:null}
             <div 
             style={{backgroundImage:`url("${nda.images.OfferImage}")`,
             backgroundSize:(((nda.scalings.Scale_Compensation || 0)+nda.scalings.ZoomImage_Percent+200)*this.props.data.size[1]/200)+"px",
@@ -27,7 +28,7 @@ export class FortniteItem extends Component {
                 Y:{nda.scalings.OffsetImage_Y}<br/>
                 O:{nda.scalings.OffsetImage_Y_Compensation}<br/>
                 </>}
-            <div className="rarity"><div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p><div className="cost"></div></div></div></div></div>
+            <div className="rarity"><div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p><div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div></div></div></div></div>
         )} else {return null}
     }
 }

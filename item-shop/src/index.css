@@ -10,16 +10,33 @@ body {
 .item {
   overflow: hidden;
 }
-.item .marvel {
+.item .marvelR {
   background:red;
   mask-image:url("./images/MarvelMaskR.png");
   -webkit-mask-image:url("./images/MarvelMaskR.png");
   transform: rotate(-45deg);
-  background-size: 100px;
+  mask-size: 200px 500px;
+  -webkit-mask-size: 200px 512px;
   background-repeat: repeat;
   width: 2048px;
   height: 2048px;
   animation: marvel 2s linear 0s infinite forwards;
+  position: auto;
+  top: auto;
+
+}
+
+.item .marvelG {
+  background:red;
+  mask-image:url("./images/MarvelMaskG.png");
+  -webkit-mask-image:url("./images/MarvelMaskG.png");
+  transform: rotate(-45deg);
+  mask-size: 200px 500px;
+  -webkit-mask-size: 200px 512px;
+  background-repeat: repeat;
+  width: 2048px;
+  height: 2048px;
+  animation: marvel 1.2s linear 0s infinite forwards;
   position: auto;
   top: auto;
 
@@ -31,6 +48,14 @@ body {
   to {
     transform:rotate(-45deg) translate(0px, -512px);
   }
+}
+.cost {
+  text-align: right;
+  overflow: hidden;
+}
+.cost img {
+  right: 0px;
+  transform:scale(1.5) rotate(11deg) translate(-5px, 2px);
 }
 .item div {
   width: 100%;
@@ -80,6 +105,10 @@ code {
   width:100%;
   font-family: Open Sans;
   text-transform: uppercase;
+}
+.cost p {
+  text-align: right;
+  transform: translate(-40px,-14px);
 }
 .item .rarity .nameSegment .cost {
   width:100%;
