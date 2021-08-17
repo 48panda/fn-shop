@@ -1,6 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
+import './colors.css';
+import './Items.css';
+
+import './marvel.css'
+import './legendary.css'
+import './epic.css'
+import './rare.css'
+import './uncommon.css'
+import './common.css'
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

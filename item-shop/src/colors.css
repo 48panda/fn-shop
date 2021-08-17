@@ -1,0 +1,14 @@
+:root {
+    --color-icon-series: rgb(112,244,245);
+    --color-marvel-series: rgb(240,45,54);
+    --color-dc-series: rgb(0,140,243);
+    --color-gaming-legends: rgb(146,138,225);
+    --color-shadow-series: rgb(255,255,255);
+    --color-star-wars-series: rgb(255,223,0);
+    --color-slurp-series: rgb(46,250,248);
+    --color-legendary: rgb(255,156,42);
+    --color-epic: rgb(214,109,255);
+    --color-rare: rgb(0,188,255);
+    --color-uncommon: rgb(117,202,0);
+    --color-common: rgb(195,202,207);
+}

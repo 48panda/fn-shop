@@ -7,188 +7,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: scroll;
 }
-.item {
-  overflow: hidden;
-}
-.item .marvelR {
-  background:red;
-  mask-image:url("./images/MarvelMaskR.png");
-  -webkit-mask-image:url("./images/MarvelMaskR.png");
-  transform: rotate(-45deg);
-  mask-size: 200px 500px;
-  -webkit-mask-size: 200px 512px;
-  background-repeat: repeat;
-  width: 2048px;
-  height: 2048px;
-  animation: marvel 2s linear 0s infinite forwards;
-  position: auto;
-  top: auto;
 
-}
 
-.item .marvelG {
-  background:red;
-  mask-image:url("./images/MarvelMaskG.png");
-  -webkit-mask-image:url("./images/MarvelMaskG.png");
-  transform: rotate(-45deg);
-  mask-size: 200px 500px;
-  -webkit-mask-size: 200px 512px;
-  background-repeat: repeat;
-  width: 2048px;
-  height: 2048px;
-  animation: marvel 1.2s linear 0s infinite forwards;
-  position: auto;
-  top: auto;
-
-}
-@keyframes marvel {
-  from {
-    transform:rotate(-45deg) translate(0px, -1024px);
-  }
-  to {
-    transform:rotate(-45deg) translate(0px, -512px);
-  }
-}
 .cost {
   text-align: right;
   overflow: hidden;
 }
-.cost img {
-  right: 0px;
-  transform:scale(1.5) rotate(11deg) translate(-5px, 2px);
-}
-.item div {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  top:0px;
-  position:absolute;
-}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.item {
-  /*background-color: red;*/
-  display: inline-block;
-  top:0px;
-  left:0px;
-  text-overflow: clip;
-  background-repeat: no-repeat;
- /* background-size: cover !important;  */
-  /*background-position-x: center;*/
-  /*background-position-y: center;*/
-  position: absolute;
-}
-.item .rarity {
-  width:100%;
-  height:72px;
-  background-color: aqua;
-  bottom: 0px;
-  top:auto;
-  position: absolute;
-}
-.item .rarity .nameSegment {
-  width:100%;
-  height:68px;
-  background-color: rgb(47,47,47);
-  bottom: 0px;
-  top:auto;
-  position: absolute;
-}
-.nameSegment p {
-  color:white;
-  z-index: 4;
-  position: absolute;
-  text-align: center;
-  width:100%;
-  font-family: Open Sans;
-  text-transform: uppercase;
-}
-.cost p {
-  text-align: right;
-  transform: translate(-40px,-14px);
-}
-.item .rarity .nameSegment .cost {
-  width:100%;
-  height:25px;
-  background-color: rgb(29,29,29);
-  bottom: 0px;
-  top:auto;
-  position: absolute;
-  z-index: 3;
-}
 
-.item.DoubleWide .rarity:before {
-  -webkit-transform: skew(0deg, -0.8615deg);
-  -ms-transform: skew(0deg, -0.8615deg);
-  transform: skew(0deg, -0.8615deg);
-}
-.item.DoubleWide .rarity .nameSegment:before {
-  -webkit-transform: skew(0deg, -0.51694deg);
-  -ms-transform: skew(0deg, -0.51694deg);
-  transform: skew(0deg, -0.51694deg);
-}
-.rarity .nameSegment:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(47,47,47);
-  -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  transform-origin: 0 0;
-  -webkit-transform: skew(0deg, -1.07deg);
-  -ms-transform: skew(0deg, -1.07deg);
-  transform: skew(0deg, -1.07deg);
-  z-index: 2;
-  background-color: inherit;
-}
-.rarity:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  transform-origin: 0 0;
-  -webkit-transform: skew(0deg, -1.79deg);
-  -ms-transform: skew(0deg, -1.79deg);
-  transform: skew(0deg, -1.79deg);
-  z-index: 1;
-  background-color: inherit;
-}
-.item img {
-  max-width: 100%;
-  max-height: 100%;
-}
-.item.Normal {
-  width:320px;
-  height: 550px;
-  margin-right: 25px;
-}
-.item.Small {
-  width:320px;
-  height: 262px;
-  margin-right: 25px;
 
-}
-  
 
-.item.DoubleWide {
-  width:665px;
-  height: 550px;
-  margin-right: 25px;
-}
-.section {
-  height:550px;
-  overflow-x:visible;
-  white-space: nowrap;
-  margin-bottom: 100px;
-}
+
+
+
+
+
+
+
+

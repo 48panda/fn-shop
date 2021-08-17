@@ -7,27 +7,35 @@ export class FortniteItem extends Component {
         console.log(this.props.data)
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[0]
-        return (<div  className={"item "+this.props.data.tileSize} style={{top:this.props.data.y,left:this.props.data.x}}>
+        return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)} style={{
+            top:this.props.data.y,
+            left:this.props.data.x,
+            "--height":this.props.data.size[1]+"px",
+            "--width":this.props.data.size[0]+"px",
+            "--offerURL":`url(${nda.images.OfferImage})`,
+            "--Zoom2":nda.scalings.Scale_Compensation || 0,
+            "--Zoom1":nda.scalings.ZoomImage_Percent || 0,
+            "--xoffset":nda.scalings.OffsetImage_X || 0,
+            "--yoffset":nda.scalings.OffsetImage_Y || 0,
+            "--yoffsetcom":nda.scalings.OffsetImage_Y_Compensation || 0,
+            "--max-size":Math.max(...this.props.data.size)+"px",
+            "--min-size":Math.min(...this.props.data.size)+"px",
+            "--gradient-size":nda.scalings.Gradient_Size || 0,
+            "--gradient-x":nda.scalings.Gradient_Position_X || 50,
+            "--gradient-y":nda.scalings.Gradient_Position_Y || 50,
+            "--gradient-color-in":"#"+nda.colors.Background_Color_B.substring(0,6),
+            "--gradient-color-out":"#"+nda.colors.Background_Color_A.substring(0,6),
+            "--spotlight-size":nda.scalings.Spotlight_Size || 0,
+            "--spotlight-x":nda.scalings.Spotlight_Position_X || 50,
+            "--spotlight-y":nda.scalings.Spotlight_Position_Y || 50
+
+            }}>
             
-            <div style={{
-                    background:`radial-gradient(circle ${nda.scalings.Gradient_Size*Math.max(...this.props.data.size)/100}px at ${nda.scalings.Gradient_Position_X}% ${nda.scalings.Gradient_Position_Y}%, ${"#"+nda.colors.Background_Color_B.substring(0,6)},${"#"+nda.colors.Background_Color_A.substring(0,6)})`,
-                    }}> </div>
-            <div style={{
-                background:`radial-gradient(circle ${nda.scalings.Gradient_Size*Math.max(...this.props.data.size)/100}px at ${nda.scalings.Gradient_Position_X}% ${nda.scalings.Gradient_Position_Y}%, ${"#"+nda.colors.Background_Color_B.substring(0,6)},${"#"+nda.colors.Background_Color_A.substring(0,6)})`,
-                WebkitMaskImage:`radial-gradient(circle ${nda.scalings.Spotlight_Size*Math.max(...this.props.data.size)/100}px at ${nda.scalings.Spotlight_Position_X}% ${nda.scalings.Spotlight_Position_Y}%, black,transparent)`,
-                filter:`brightness(${1+nda.scalings.Spotlight_Intensity/100})`
-                }}> </div>
-            {nda.scalings["Streak Angle"]?<><div className="marvelR"></div><div className="marvelG"></div></>:null}
-            <div 
-            style={{backgroundImage:`url("${nda.images.OfferImage}")`,
-            backgroundSize:(((nda.scalings.Scale_Compensation || 0)+nda.scalings.ZoomImage_Percent+200)*this.props.data.size[1]/200)+"px",
-            backgroundPositionX:`calc(50% + ${this.props.data.size[0]*nda.scalings.OffsetImage_X/100}px)`,
-            backgroundPositionY:`calc(0% + calc(calc(calc(${this.props.data.size[0]*nda.scalings.OffsetImage_Y/100}px + calc(${this.props.data.size[0]*(nda.scalings.OffsetImage_Y_Compensation || 0)/100}px) / 2) - ${(this.props.data.tileSize==="Small" && nda.scalings.OffsetImage_Y_Compensation)?40:0}px))`}}>
-            
-                {<><br/>
-                Y:{nda.scalings.OffsetImage_Y}<br/>
-                O:{nda.scalings.OffsetImage_Y_Compensation}<br/>
-                </>}
+            <div className="gradient"> </div>
+            <div className="gradient bright" style={{filter:`brightness(${1+nda.scalings.Spotlight_Intensity/100})`}}> </div>
+            <div className="SpecialEffects1"></div>
+            <div className="SpecialEffects2"></div>
+            <div className="offer">
             <div className="rarity"><div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p><div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div></div></div></div></div>
         )} else {return null}
     }

@@ -1,0 +1,42 @@
+.item.MarvelSeries .SpecialEffects1 {
+    background:red;
+    mask-image:url("./images/MarvelMaskR.png");
+    -webkit-mask-image:url("./images/MarvelMaskR.png");
+    transform: rotate(-45deg);
+    mask-size: 200px 500px;
+    -webkit-mask-size: 200px 512px;
+    background-repeat: repeat;
+    width: 2048px;
+    height: 2048px;
+    animation: marvel 2s linear 0s infinite forwards;
+    position: auto;
+    top: auto;
+  
+  }
+  
+.item.MarvelSeries .SpecialEffects2 {
+    background:red;
+    mask-image:url("./images/MarvelMaskG.png");
+    -webkit-mask-image:url("./images/MarvelMaskG.png");
+    transform: rotate(-45deg);
+    mask-size: 200px 500px;
+    -webkit-mask-size: 200px 512px;
+    background-repeat: repeat;
+    width: 2048px;
+    height: 2048px;
+    animation: marvel 1.2s linear 0s infinite forwards;
+    position: auto;
+    top: auto;
+  
+  }
+.item.MarvelSeries .rarity {
+    background:var(--color-marvel-series);
+}
+  @keyframes marvel {
+    from {
+      transform:rotate(-45deg) translate(0px, -1024px);
+    }
+    to {
+      transform:rotate(-45deg) translate(0px, -512px);
+    }
+  }
