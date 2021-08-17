@@ -27,16 +27,22 @@ export class FortniteItem extends Component {
             "--gradient-color-out":"#"+nda.colors.Background_Color_A.substring(0,6),
             "--spotlight-size":nda.scalings.Spotlight_Size || 0,
             "--spotlight-x":nda.scalings.Spotlight_Position_X || 50,
-            "--spotlight-y":nda.scalings.Spotlight_Position_Y || 50
+            "--spotlight-y":nda.scalings.Spotlight_Position_Y || 50,
+            "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
+            "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
 
             }}>
             
             <div className="gradient"> </div>
-            <div className="gradient bright" style={{filter:`brightness(${1+nda.scalings.Spotlight_Intensity/100})`}}> </div>
+            <div className="gradient bright"> </div>
             <div className="SpecialEffects1"></div>
             <div className="SpecialEffects2"></div>
-            <div className="offer">
-            <div className="rarity"><div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p><div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div></div></div></div></div>
+            <div className="offer"></div>
+            <div className="rarity"></div>
+            <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
+            <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
+                
+            </div>
         )} else {return null}
     }
 }
