@@ -3,11 +3,12 @@ import { bindAll } from 'underscore'
 
 export class FortniteItem extends Component {
     render() {
+        console.log(this.props.index)
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         console.log(this.props.data)
         if (this.props.data.newDisplayAsset) {
-        let nda = this.props.data.newDisplayAsset.materialInstances[0]
-        return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)} style={{
+        let nda = this.props.data.newDisplayAsset.materialInstances[this.props.index]
+        return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+" "+this.props.index} style={{
             top:this.props.data.y,
             left:this.props.data.x,
             "--height":this.props.data.size[1]+"px",
@@ -33,8 +34,9 @@ export class FortniteItem extends Component {
 
             }}>
             
-            <div className="gradient"> </div>
-            <div className="gradient bright"> </div>
+            <div className="gradient"></div>
+            <div className="gradient bright"></div>
+            <div className="falloff"></div>
             <div className="SpecialEffects1"></div>
             <div className="SpecialEffects2"></div>
             <div className="offer"></div>

@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import FortniteItem from './Item';
 import React from 'react';
 import $, { data } from 'jquery';
 import Section from './Section';
+import DisplayItem from './DisplayItem';
 
 var _ = require('underscore');
 
 class App extends React.Component {
   constructor(){
     super()
-    this.state={data:{}}
+    this.state={data:{},n:0}
   }
   componentDidMount(){
     console.log("Getting JSON")
@@ -64,10 +64,16 @@ class App extends React.Component {
       this.setState({data:data})
     });
   }
+  componentDidUpdate() {
+    setTimeout(function() { //Start the timer
+      this.setState({n: this.state.n+1}) //After 1 second, set render to true
+  }.bind(this), 3000)
+  }
   render(){
+    let n=this.state.n
     return (
       <div className="App">
-        {this.state.data.items?this.state.data.items.map(x=><Section items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><FortniteItem data={y} />)} />):<></>}
+        {this.state.data.items?this.state.data.items.map(x=><Section items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem data={y} n={n}/>)} />):<></>}
       </div>
     );
   }
