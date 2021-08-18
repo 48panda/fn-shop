@@ -4,15 +4,18 @@
     --ZoomsDivided:calc(var(--ZoomsAdded) / 200);
     --ZoomPercent:calc(var(--ZoomsDivided) + 1);
     background-size: calc(var(--ZoomPercent) * var(--height));
+    background-origin: 50% 50%;
     background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
+    background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--width)) / 200);
 }
 .item:hover .offer {
   background-image:var( --offerURL );
   --ZoomsAdded:calc(var(--Zoom1) + var(--Zoom2));
   --ZoomsDivided:calc(var(--ZoomsAdded) / 200);
-  --ZoomPercent:calc(var(--ZoomsDivided) + 1.2);
+  --ZoomPercent:calc(var(--ZoomsDivided) + 1.05);
   background-size: calc(var(--ZoomPercent) * var(--height));
   background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
+  background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--width)) / 200);
 }
 body {
   background-color: rgb(22,141,229);
@@ -52,7 +55,7 @@ body {
   }
 
 
-.SpecialEffects1, .SpecialEffects2, .falloff {
+.SpecialEffects1, .SpecialEffects2, .SpecialEffects3, .SpecialEffects4, .SpecialEffects5, .SpecialEffects6, .falloff {
   background: transparent;
   display: none;
 }
