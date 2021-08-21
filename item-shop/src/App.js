@@ -73,7 +73,7 @@ class App extends React.Component {
     let n=this.state.n
     return (
       <div className="App">
-        {this.state.data.items?this.state.data.items.map(x=><Section items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem data={y} n={n}/>)} />):<></>}
+        {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} prevsect={i==0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem data={y} n={n}/>)} />):<></>}
       </div>
     );
   }
