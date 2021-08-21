@@ -1,8 +1,31 @@
-.item.CreatorCollabSeries.doIcon .SpecialEffects1 {
-    background-color: rgb(26, 157, 180);
-    display: block;
+.item.CreatorCollabSeries.doIcon .gradient {
+    background: rgb(16, 104, 119);
 }
-@keyframes sfx2 {
+.item.CreatorCollabSeries.doIcon .SpecialEffects1 {
+    background-image: radial-gradient(circle 140px ,rgb(0, 217, 255),rgb(16, 104, 119));
+    width: 200%;
+    height: 200%;
+    animation: iconseriesanim1 30s ease infinite;
+    display: block;
+    margin-left: -150%;
+    margin-top: -150%;
+    background-size: 100%;
+    
+}
+.item.CreatorCollabSeries.doIcon .background {
+    filter: blur(10px);
+}
+@keyframes iconseriesanim1 {
+    0% {        transform: translate(050%,060%) translate(000%,000%)}
+    20% {       transform: translate(050%,060%) translate(030%,020%)}
+    30% {       transform: translate(050%,060%) translate(040%,010%)}
+    40% {       transform: translate(050%,060%) translate(020%,-30%)}
+    50% {       transform: translate(050%,060%) translate(-10%,-15%)}
+    60% {       transform: translate(050%,060%) translate(-30%,000%)}
+    80% {       transform: translate(050%,060%) translate(-15%,000%)}
+    100% {      transform: translate(050%,060%) translate(000%,000%)}
+}
+@keyframes iconseriesanim2 {
     from {
         transform: rotate(40deg);
     }
@@ -10,7 +33,7 @@
         transform: rotate(-10deg);
     }
 }
-@keyframes sfx3 {
+@keyframes iconseriesanim3 {
     from {
         transform: rotate(-30deg);
     }
@@ -18,8 +41,16 @@
         transform: rotate(20deg);
     }
 }
+@keyframes iconseriesanim4 {
+    from {
+        transform: rotate(-20deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
 .item.CreatorCollabSeries.doIcon .SpecialEffects2 {
-    animation: sfx2 10s ease 0s infinite alternate;
+    animation: iconseriesanim2 10s ease 0s infinite alternate;
     background-color: rgb(49,208,214);
     display: inline;
     width: 40px;
@@ -63,7 +94,7 @@
     background-color: inherit;
 }
 .item.CreatorCollabSeries.doIcon .SpecialEffects3 {
-    animation: sfx3 5s ease -7s infinite alternate;
+    animation: iconseriesanim3 5s ease -7s infinite alternate;
     background-color: rgb(49,208,214);
     display: inline;
     width: 20px;
@@ -104,5 +135,50 @@
     -webkit-transform: skew(-1deg,0deg);
     -ms-transform: skew(-1deg, 0deg);
     transform: skew(-1deg, 0deg);
+    background-color: inherit;
+}
+
+.item.CreatorCollabSeries.doIcon .SpecialEffects4 {
+    animation: iconseriesanim4 7.5s ease -7s infinite alternate;
+    background-color: rgb(49,208,214);
+    display: inline;
+    width: 20px;
+    height: 150%;
+    margin: 0 auto;
+    top: auto;
+    bottom: 0px;
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+.item.CreatorCollabSeries.doIcon .SpecialEffects4::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: skew(0.5deg,0deg);
+    -ms-transform: skew(0.5deg, 0deg);
+    transform: skew(0.5deg, 0deg);
+    background-color: inherit;
+}
+.item.CreatorCollabSeries.doIcon .SpecialEffects4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: skew(-0.5deg,0deg);
+    -ms-transform: skew(-0.5deg, 0deg);
+    transform: skew(-0.5deg, 0deg);
     background-color: inherit;
 }

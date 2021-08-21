@@ -6,6 +6,7 @@ import './colors.css';
 import './Items.css';
 
 import './marvel.css';
+import './dc.css';
 import './icon.css';
 
 import './legendary.css';

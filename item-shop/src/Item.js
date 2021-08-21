@@ -3,9 +3,7 @@ import { bindAll } from 'underscore'
 
 export class FortniteItem extends Component {
     render() {
-        console.log(this.props.index)
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
-        console.log(this.props.data)
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[this.props.index]
         return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+" "+this.props.index+(nda.scalings["2nd-Beam Y-Offset"]?" doIcon":"")} style={{
@@ -33,20 +31,21 @@ export class FortniteItem extends Component {
             "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
 
             }}>
-            
-            <div className="gradient"></div>
-            <div className="gradient bright"></div>
-            <div className="falloff"></div>
-            <div className="SpecialEffects1"></div>
-            <div className="SpecialEffects2"></div>
-            <div className="SpecialEffects3"></div>
-            <div className="SpecialEffects4"></div>
-            <div className="SpecialEffects5"></div>
-            <div className="SpecialEffects6"></div>
+            <div className="background">
+                <div className="gradient"></div>
+                <div className="gradient bright"></div>
+                <div className="falloff"></div>
+                <div className="SpecialEffects1"></div>
+                <div className="SpecialEffects2"></div>
+                <div className="SpecialEffects3"></div>
+                <div className="SpecialEffects4"></div>
+                <div className="SpecialEffects5"></div>
+                <div className="SpecialEffects6"></div>
+            </div>
             <div className="offer"></div>
             <div className="rarity"></div>
             <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
-            <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
+            <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img width="0" height="0" src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
             
                 
             </div>

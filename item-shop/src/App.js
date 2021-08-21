@@ -51,8 +51,8 @@ class App extends React.Component {
           }
         }
         if (i.tileSize === "Small"){yoffset=smallTileParity*(tileSizes["Small"][1]+yspacesmall)}
-        i.x = xpos
-        i.y = ypos+yoffset
+        i.x = xpos+50
+        i.y = ypos+yoffset+200
         i.size = tileSizes[i.tileSize]
         if (i.tileSize === "Small"){smallTileParity=1-smallTileParity
           if (smallTileParity===0){xpos+=tileSizes[i.tileSize][0]+xspace}}

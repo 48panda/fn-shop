@@ -1,0 +1,25 @@
+.DCUSeries .SpecialEffects1 {
+    background-color: var(--gradient-color-in);
+    display: block;
+}
+.DCUSeries .SpecialEffects2 {
+    background-color: var(--gradient-color-in);
+    filter: brightness(0.3);
+    -webkit-mask-image: url("./images/NoiseR.png");
+    mask-image: url("./images/NoiseR.png");
+    display: block;
+}
+.DCUSeries .SpecialEffects3 {
+    background-color: var(--gradient-color-in);
+    filter: brightness(0.3);
+    -webkit-mask-image: url("./images/NoiseG.png");
+    mask-image: url("./images/NoiseG.png");
+    display: block;
+}
+.DCUSeries .SpecialEffects4 {
+    background-color: var(--gradient-color-in);
+    filter: brightness(0.3);
+    -webkit-mask-image: url("./images/NoiseB.png");
+    mask-image: url("./images/NoiseB.png");
+    display: block;
+}
