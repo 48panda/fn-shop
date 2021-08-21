@@ -28,6 +28,7 @@ export class FortniteItem extends Component {
             "--spotlight-x":nda.scalings.Spotlight_Position_X || 50,
             "--spotlight-y":nda.scalings.Spotlight_Position_Y || 50,
             "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
+            "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 0,
             "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
 
             }}>
