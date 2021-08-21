@@ -1,3 +1,6 @@
+.item.DCUSeries .rarity {
+    background:var(--color-dc-series);
+}
 .DCUSeries .SpecialEffects1 {
     background-color: var(--gradient-color-in);
     display: block;

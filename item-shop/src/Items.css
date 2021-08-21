@@ -44,7 +44,7 @@ html {
 .cost img {
     max-height: 100%;
     right: 0px;
-    transform:scale(1.5) rotate(11deg) translate(-12px, -35px);
+    transform:scale(1.5) rotate(11deg) translate(-12px, -40px);
 }
 .item div {
     width: 100%;
@@ -109,7 +109,7 @@ html {
   background-color: rgb(199,255,247);
 }
 .item:hover .rarity {
-  filter:brightness(1.5);
+  filter:brightness(1.2);
   height:81px;
 }
 .item .rarity {
@@ -140,13 +140,20 @@ html {
   }
 .banner {
   width: fit-content;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 1px !important;
+  font-weight: bolder;
+  font-family: Roboto;
   position: absolute;
   z-index: 100;
   transform: translate(-20px,-20px);
-  background-color: red;
+  background-color: rgb(215,0,112);
+  border: rgb(255,63,138) 4px solid;
   padding: 10px;
+}
+.banner.High {
+  background-color: rgb(255,255,0);
+  border-color: white;
 }
 .nameSegment:before {
     content: '';
@@ -188,9 +195,10 @@ html {
     position: absolute;
     text-align: center;
     width:100%;
-    font-family: Open Sans;
+    font-family: Roboto;
     text-transform: uppercase;
     font-weight: bolder;
+    transform: translateY(-10px);
   }
   .item:hover .nameSegment p {
     color:black;
@@ -207,8 +215,8 @@ html {
   .cost p {
     color:white;
     text-align: right;
-    font-family: Open Sans;
-    transform: translate(-40px,-15px);
+    font-family: Roboto;
+    transform: translate(-40px,-20px);
     font-weight: bolder;
   }
  .item:hover .cost p {

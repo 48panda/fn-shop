@@ -15,6 +15,12 @@ import './rare.css';
 import './uncommon.css';
 import './common.css';
 
+import './images/MarvelMaskR.png'
+import './images/MarvelMaskG.png'
+import './images/NoiseR.png'
+import './images/NoiseG.png'
+import './images/NoiseB.png'
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
