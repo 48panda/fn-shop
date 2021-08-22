@@ -19,6 +19,8 @@
 }
 html {
   background-color: rgb(22,141,229);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .item.DoubleWide {
     width:665px;
@@ -36,10 +38,8 @@ html {
     margin-right: 25px;
 }
 .section {
-    height:550px;
-    overflow-x:visible;
-    white-space: nowrap;
-    margin-bottom: 100px;
+    height:0px;
+    position: absolute;
 }
 .cost img {
     max-height: 100%;

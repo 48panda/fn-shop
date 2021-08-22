@@ -24,6 +24,13 @@ import './images/NoiseB.png'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+window.onscroll = function (e) {
+  let app = document.getElementById("App")
+  let section = Math.round(window.scrollY/100)
+  app.style.transform = `translateY(${-section * 650}px)`
+  window.scrollTo({top:section*100,behavior:'smooth'})
+  } 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

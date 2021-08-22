@@ -1,7 +1,13 @@
 .App {
   text-align: center;
+  position: fixed;
+  transition: all 0.1s;
 }
-
+.lagreduce {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

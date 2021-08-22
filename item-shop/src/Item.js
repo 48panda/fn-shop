@@ -6,7 +6,6 @@ export class FortniteItem extends Component {
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[this.props.index]
-        console.log(nda)
         return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+(nda.flags.bIsCreatorCollabSeries?" doIcon":"")} style={{
             top:this.props.data.y,
             left:this.props.data.x,
