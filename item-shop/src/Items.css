@@ -64,12 +64,12 @@ html {
     background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
 }
 .item:hover .gradient {
-  background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 75) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
+  background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 90) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
 }
 .item .gradient.bright {
-  filter:brightness(calc(calc(var(--spotlight-strength) / 100) + 0));
-  mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--min-size)) / 100) at calc(var(--spotlight-x) * 1%) calc(var(--spotlight-y) * 1%),black,rgba(0,0,0,0.5) calc(var(--spotlight-hardness) * 2%),transparent);
-  -webkit-mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--min-size)) / 100) at calc(var(--spotlight-x) * 1%) calc(var(--spotlight-y) * 1%),black,rgba(0,0,0,0.5) calc(var(--spotlight-hardness) * 0.1%),transparent);
+  filter:brightness(calc(calc(var(--spotlight-strength) / 100) + 0.8));
+  mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--max-size)) / 100) at calc(var(--spotlight-x) * 1%) calc(var(--spotlight-y) * 1%),black,rgba(0,0,0,0.5) calc(var(--spotlight-hardness) * 1%),transparent);
+  -webkit-mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--min-size)) / 100) at calc(var(--spotlight-x) * 1%) calc(var(--spotlight-y) * 1%),black,rgba(0,0,0,0.5) calc(var(--spotlight-hardness) * 1%),transparent);
 }
 .item.off {
   visibility: hidden;

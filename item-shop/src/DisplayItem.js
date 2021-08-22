@@ -26,10 +26,11 @@ export class DisplayItem extends Component {
                 "--gradient-y":nda.scalings.Gradient_Position_Y || 33,
                 "--gradient-color-in":"#89d8ff",
                 "--gradient-color-out":"#237fd5",
-                "--spotlight-size":nda.scalings.Spotlight_Size || 0,
-                "--spotlight-x":nda.scalings.Spotlight_Position_X || 50,
-                "--spotlight-y":nda.scalings.Spotlight_Position_Y || 50,
+                "--spotlight-size":nda.scalings.Spotlight_Size || 100,
+                "--spotlight-x":nda.scalings.Spotlight_Position_X || -100,
+                "--spotlight-y":nda.scalings.Spotlight_Position_Y || -100,
                 "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
+                "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 50,
                 "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
     
                 }}>
