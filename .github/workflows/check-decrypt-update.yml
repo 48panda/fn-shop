@@ -21,4 +21,4 @@ jobs:
       - run: |
           cd item-shop
           python3 buildmappings.py
-          
+      - run: echo done!
