@@ -7,8 +7,8 @@ export class FortniteItem extends Component {
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[this.props.index]
         return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+(nda.flags.bIsCreatorCollabSeries?" doIcon":"")} style={{
-            top:this.props.data.y,
-            left:this.props.data.x,
+            top:this.props.data.y - this.props.first.y + 80,
+            left:this.props.data.x - this.props.first.x + 50,
             "--height":this.props.data.size[1]+"px",
             "--width":this.props.data.size[0]+"px",
             "--offerURL":`url(${nda.images.OfferImage})`,
@@ -46,7 +46,7 @@ export class FortniteItem extends Component {
             <div className="offer"></div>
             <div className="rarity"></div>
             <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
-            <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
+            <div className="cost"><p><span className="lastseen">{this.props.lastSeenString}</span><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
             
                 
             </div>

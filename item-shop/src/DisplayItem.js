@@ -5,12 +5,28 @@ export class DisplayItem extends Component {
     render() {
         let banner = this.props.data.banner
         let data = this.props.data
+        let history = data.items[0].shopHistory
+        let today = new Date()
+        today.setUTCHours(0,0,0,0)
+        let dateLastSeen = history.length===1?today:new Date(history[history.length-2])
+        let lastSeenDays = (today.getTime() - dateLastSeen.getTime()) / (1000 * 3600 * 24)
+        let lastSeenString = ""
+        if (lastSeenDays === 0) {
+            lastSeenString = "New item"
+        } else if (lastSeenDays===1){
+            lastSeenString = "Yesterday"
+        } else {
+            lastSeenString = `${lastSeenDays}d ago`
+        }
+        if (!this.props.lastseen) {
+            lastSeenString = ""
+        }
         let nda = {scalings:{}}
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (!this.props.data.newDisplayAsset) {
             return <><div  className={`item ${this.props.data.tileSize} ${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)=="CreatorCollabSeries"?"doIcon":""}`} style={{
-                top:this.props.data.y,
-                left:this.props.data.x,
+                top:this.props.data.y - this.props.first.y +80,
+                left:this.props.data.x - this.props.first.x + 50,
                 "--height":`${data.size[1]}px`,
                 "--width":`${data.size[0]}px`,
                 "--offerURL":`url(${data.items[0].images.icon})`,
@@ -48,13 +64,13 @@ export class DisplayItem extends Component {
                 <div className="offer"></div>
                 <div className="rarity"></div>
                 <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
-                <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img width="0" height="0" src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
-            </div>{banner?<div style={{top:this.props.data.y,left:this.props.data.x}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}</>
+                <div className="cost"><p><span className="lastseen">{lastSeenString}</span><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img width="0" height="0" src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
+            </div>{banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}</>
         } else {
         return (
             <div>
-                {<FortniteItem index={this.props.n % this.props.data.newDisplayAsset.materialInstances.length} {...this.props}/>}
-                {banner?<div style={{top:this.props.data.y,left:this.props.data.x}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}
+                {<FortniteItem lastSeenString={lastSeenString} index={this.props.n % this.props.data.newDisplayAsset.materialInstances.length} {...this.props}/>}
+                {banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}
             </div>
         )}
     }

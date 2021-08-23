@@ -4,7 +4,9 @@ import React from 'react';
 import $, { data } from 'jquery';
 import Section from './Section';
 import DisplayItem from './DisplayItem';
+import Cookie from 'universal-cookie'
 
+var cookie = new Cookie();
 var _ = require('underscore');
 
 class App extends React.Component {
@@ -56,7 +58,7 @@ class App extends React.Component {
         }
         if (i.tileSize === "Small"){yoffset=smallTileParity*(tileSizes["Small"][1]+yspacesmall)}
         i.x = xpos+50
-        i.y = ypos+yoffset+200
+        i.y = ypos+yoffset+230
         i.size = tileSizes[i.tileSize]
         if (i.tileSize === "Small"){smallTileParity=1-smallTileParity
           if (smallTileParity===0){xpos+=tileSizes[i.tileSize][0]+xspace}}
@@ -74,14 +76,23 @@ class App extends React.Component {
   }
   render(){
     let n=this.state.n
+    let lastSeen = cookie.get("showLastSeen") || false
     return (
+      <>
+    <div className="tabs">
+      <div className="tabin">
+        <a href="/options"><p>settings</p></a>
+        <a href="/" className="active"><p>item shop</p></a>
+      </div>
+    </div>
       <div id="sizeSetter" style={{height:this.state.height}}>
         <div className="lagreduce">
         <div className="App" id="App">
-          {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} prevsect={i==0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem data={y} n={n}/>)} />):<></>}
+          {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} last={x[x.length-1]} prevsect={i==0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem lastseen={lastSeen} data={y} n={n} first={x[0]} />)} />):<></>}
         </div>
         </div>
       </div>
+      </>
     );
   }
 }

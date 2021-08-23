@@ -17,6 +17,11 @@
   background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
   background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--width)) / 200);
 }
+.lastseen {
+  position: absolute;
+  left: 0px;
+  transition: all 0s;
+}
 html {
   background-color: rgb(22,141,229);
   overflow-y: scroll;
@@ -216,8 +221,9 @@ html {
     color:white;
     text-align: right;
     font-family: Roboto;
-    transform: translate(-40px,-20px);
+    transform: translate(10px,-20px);
     font-weight: bolder;
+    width:calc(100% - 50px);
   }
  .item:hover .cost p {
     color:black;
