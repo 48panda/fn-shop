@@ -13,9 +13,9 @@ jobs:
             add: '--all'
             author_name: 48panda48
             author_email: georege.48panda@gmail.com
-            default_author: github_actor'
+            default_author: 'github_actor'
             message: 'BOT: Updated mappings'
-            pull_strategy: 'NO-PULL
+            pull_strategy: 'NO-PULL'
             push: true
             signoff: true
       - run: |
