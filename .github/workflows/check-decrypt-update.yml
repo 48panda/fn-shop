@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          cd ..
-          cd ..
+          echo "$GITHUB_ACTION_PATH"
           cd item-shop
           python3 buildmappings.py
