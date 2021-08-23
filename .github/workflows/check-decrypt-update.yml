@@ -7,7 +7,4 @@ jobs:
   update-mappings:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "$GITHUB_ACTION_PATH"
-          cd item-shop
-          python3 buildmappings.py
+      - run: ls
