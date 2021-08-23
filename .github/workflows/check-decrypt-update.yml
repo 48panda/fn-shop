@@ -8,4 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo $GITHUB_WORKSPACE
+      - run: |
+          cd item-shop
+          python3 buildmappings.py
+          git add public/mappings.json
+          git commit -m "BOT:updated mappings"
+          git push
