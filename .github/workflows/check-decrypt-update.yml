@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: |
+          cd item-shop
+          python3 buildmappings.py
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
             add: '--all'
@@ -18,7 +21,3 @@ jobs:
             pull_strategy: 'NO-PULL'
             push: true
             signoff: true
-      - run: |
-          cd item-shop
-          python3 buildmappings.py
-      - run: echo done!
