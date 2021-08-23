@@ -7,5 +7,5 @@ jobs:
   update-mappings:
     runs-on: ubuntu-latest
     steps:
-      - run: dir
-      - run: python3 item-shop/buildmappings.py
+      - run: cd item-shop
+      - run: python3 buildmappings.py
