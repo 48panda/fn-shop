@@ -8,8 +8,8 @@ blacklist=['banner','contrail','emoji','loadingscreen','music','spray','toy']
 backbling=['backpack','petcarrier','pet']
 
 items=[]
-#with open('public/mappings.json') as f:
-#  items = json.load(f)["data"]
+with open('public/mappings.json') as f:
+  items = json.load(f)["data"]
 
 for i in x:
   if i["id"] in items:
