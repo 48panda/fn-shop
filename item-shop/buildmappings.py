@@ -23,6 +23,5 @@ for i in x:
   if i["type"]["value"] in backbling:
     i["type"]["value"] = 'backpack'
   items.append(i["id"])
-  print("append!")
 with open('public/mappings.json', 'w') as f:
     json.dump({"data":items}, f)

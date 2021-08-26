@@ -4,11 +4,11 @@ import React from 'react';
 import $, { data } from 'jquery';
 import Section from './Section';
 import DisplayItem from './DisplayItem';
-import Cookie from 'universal-cookie'
 
-var cookie = new Cookie();
+import FNLink from './FNLink';
+import state from './variables';
+
 var _ = require('underscore');
-
 class App extends React.Component {
   constructor(){
     super()
@@ -72,17 +72,25 @@ class App extends React.Component {
   componentDidUpdate() {
     setTimeout(function() { //Start the timer
       this.setState({n: this.state.n+1}) //After 1 second, set render to true
-  }.bind(this), 3000)
+  }.bind(this), 2000)
+  }
+  componentWillUnmount() {
+    var id = window.setTimeout(function() {}, 0);
+
+    while (id--) {
+        window.clearTimeout(id); // will do nothing if no timeout with id is present
+    }
   }
   render(){
     let n=this.state.n
-    let lastSeen = cookie.get("showLastSeen") || false
+    let lastSeen = state.settings.showLastSeen
     return (
       <>
     <div className="tabs">
       <div className="tabin">
-        <a href="/options"><p>settings</p></a>
-        <a href="/" className="active"><p>item shop</p></a>
+        <FNLink href="/options"><p>settings</p></FNLink>
+        <FNLink href="/" className="active"><p>item shop</p></FNLink>
+        <FNLink href="/locker"><p>locker</p></FNLink>
       </div>
     </div>
       <div id="sizeSetter" style={{height:this.state.height}}>

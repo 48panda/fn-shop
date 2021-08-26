@@ -4,6 +4,7 @@ import history from "./history.js";
 
 import App from './App.js';
 import Settings from './settings.js';
+import Locker from './locker.js';
 
 export class FNRouter extends Component {
     render() {
@@ -12,6 +13,7 @@ export class FNRouter extends Component {
               <Switch>
                 <Route exact path="/"><App /></Route>
                 <Route path="/options"><Settings/></Route>
+                <Route path="/locker"><Locker/></Route>
               </Switch>
             </Router>
         )

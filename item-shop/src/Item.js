@@ -6,7 +6,7 @@ export class FortniteItem extends Component {
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[this.props.index]
-        return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+(nda.flags.bIsCreatorCollabSeries?" doIcon":"")} style={{
+        return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+(nda.flags.bIsCreatorCollabSeries?" doIcon":"")+(nda.flags.bIsDCUSeries?" doNoise":"")+(nda.flags.bIsPlatformSeries?" doGamingLegends":"")} style={{
             top:this.props.data.y - this.props.first.y + 80,
             left:this.props.data.x - this.props.first.x + 50,
             "--height":this.props.data.size[1]+"px",
@@ -29,9 +29,18 @@ export class FortniteItem extends Component {
             "--spotlight-y":nda.scalings.Spotlight_Position_Y || -100,
             "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
             "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 50,
-            "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
+            "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg",
+            "--circuit-bg-1":"#"+(nda.colors.ColorCircuitBackground || "").substring(0,6),
+            "--circuit-bg-2":"#"+(nda.colors.ColorCircuitBackground2 || "").substring(0,6),
+            "--circuit-dots":"#"+(nda.colors.ColorCircuitDots || "").substring(0,6),
+            "--circuit-highlight":"#"+(nda.colors.ColorCircuitHighlights || "").substring(0,6),
+            "--circuit-lines-1":"#"+(nda.colors.ColorCircuitLines || "").substring(0,6),
+            "--circuit-lines-2":"#"+(nda.colors.ColorCircuitLines2 || "").substring(0,6),
+            "--circuit-size":nda.scalings.SizeCircuitPattern,
+            "--circuit-skew":radians_to_degrees(nda.scalings.Skew)
 
             }}>
+                <div className="clickDetect"></div>
             <div className="background">
                 <div className="gradient"></div>
                 <div className="gradient bright"></div>

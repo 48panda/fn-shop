@@ -33,7 +33,7 @@ imageG = Image.fromarray(imB)
 
 imageR_M = Image.fromarray(imR_M.astype(np.uint8))
 imageG_M = Image.fromarray(imG_M.astype(np.uint8))
-imageB_M = Image.fromarray(imG_M.astype(np.uint8))
+imageB_M = Image.fromarray(imB_M.astype(np.uint8))
 
 imageR_M.save(savename+"R.png")
 imageG_M.save(savename+"G.png")

@@ -2,6 +2,18 @@ import React, { Component } from 'react'
 import FortniteItem from './Item';
 
 export class DisplayItem extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             data:props.data
+        }
+    this.clicked=this.clicked.bind(this)
+    }
+    
+    clicked() {
+        console.log(this.state.data.items.map(e=>e.id))
+    }
     render() {
         let banner = this.props.data.banner
         let data = this.props.data
@@ -24,7 +36,7 @@ export class DisplayItem extends Component {
         let nda = {scalings:{}}
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (!this.props.data.newDisplayAsset) {
-            return <><div  className={`item ${this.props.data.tileSize} ${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)=="CreatorCollabSeries"?"doIcon":""}`} style={{
+            return <div onClick={this.clicked}><div  className={`item ${this.props.data.tileSize}${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)=="CreatorCollabSeries"?"doIcon":""}`} style={{
                 top:this.props.data.y - this.props.first.y +80,
                 left:this.props.data.x - this.props.first.x + 50,
                 "--height":`${data.size[1]}px`,
@@ -50,6 +62,7 @@ export class DisplayItem extends Component {
                 "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
     
                 }}>
+                <div className="clickDetect"></div>
                 <div className="background">
                     <div className="gradient"></div>
                     <div className="gradient bright"></div>
@@ -65,10 +78,10 @@ export class DisplayItem extends Component {
                 <div className="rarity"></div>
                 <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
                 <div className="cost"><p><span className="lastseen">{lastSeenString}</span><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img width="0" height="0" src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
-            </div>{banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}</>
+            </div>{banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}</div>
         } else {
         return (
-            <div>
+            <div onClick={this.clicked}>
                 {<FortniteItem lastSeenString={lastSeenString} index={this.props.n % this.props.data.newDisplayAsset.materialInstances.length} {...this.props}/>}
                 {banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}
             </div>

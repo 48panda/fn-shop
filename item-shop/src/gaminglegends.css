@@ -1,0 +1,26 @@
+.item.PlatformSeries .rarity {
+    background:var(--color-gaming-legends);
+}
+
+.doGamingLegends .SpecialEffects2{
+    display: block;
+    -webkit-mask-image: url("./images/CircuitR.png");
+    background-color: var(--circuit-dots);
+    -webkit-mask-size: calc(var(--circuit-size) * 200px);
+    transform: skewX(calc(calc(0 - var(--circuit-skew)) * 3deg)) scale(2);
+    -webkit-mask-repeat: repeat;
+}
+
+.doGamingLegends .SpecialEffects3{
+    display: block;
+    -webkit-mask-image: url("./images/CircuitG.png");
+    background-color: var(--circuit-lines-1);
+    -webkit-mask-size: calc(var(--circuit-size) * 200px);
+    transform: skewX(calc(calc(0 - var(--circuit-skew)) * 3deg)) scale(2);
+    -webkit-mask-repeat: repeat;
+}
+.doGamingLegends .SpecialEffects1{
+    display: block;
+    background-color: var(--circuit-bg-1);
+    filter: brightness(0.5);
+}
