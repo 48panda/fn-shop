@@ -14,6 +14,7 @@ import './epic.css';
 import './rare.css';
 import './uncommon.css';
 import './common.css';
+import './gaminglegends.css';
 
 import './images/MarvelMaskR.png'
 import './images/MarvelMaskG.png'
@@ -23,6 +24,7 @@ import './images/NoiseB.png'
 
 import FNRouter from './router';
 import $ from 'jquery'
+let state = require('./variables.js')
 
 let last = +new Date();
 let Section = 0;
@@ -35,6 +37,7 @@ window.onscroll = function (e) {
   window.scrollTo({top:section*60})
   } */
 $('*').on('wheel', function(event) {
+  if (!document.getElementById("App")) {return null}
     var delta = {
       x: event.originalEvent.deltaX, 
       y: event.originalEvent.deltaY
@@ -55,6 +58,7 @@ $('*').on('wheel', function(event) {
         window.scrollTo({top:Section*100})
     }
   });
+
 ReactDOM.render(
   <React.StrictMode>
     <FNRouter/>
