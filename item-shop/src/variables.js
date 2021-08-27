@@ -3,8 +3,19 @@ import Cookie from 'universal-cookie'
 var cookie = new Cookie();
 
 let state={owned:[],mappings:[],settings:{allowCookies:cookie.get("allowCookies")==="true",showLastSeen:cookie.get("showLastSeen")==="true",trackOwned:cookie.get("trackOwned")==="true"}}
+const arrayToObject = (arr, key) => Object.assign({}, ...arr.map(item => ({[item[key].toLowerCase()]: item})))
 
-$.getJSON('/mappings.json').then(data=>{state.mappings=data.data;console.log(state.fromLocalStorage("F4"))})
+$.getJSON('/mappings.json').then(data=>{state.mappings=data.data;console.log(state.fromLocalStorage("F4"))
+if (state.settings.trackOwned) {
+    state.owned=state.fromLocalStorage(localStorage.getItem("OwnedItems"))
+}
+
+}
+)
+$.getJSON('https://fortnite-api.com/cosmetics/br').then(data =>{
+  state.all = arrayToObject(data.data,"id")
+  console.log(state.all)
+})
 state.idFromItem=item=>state.mappings.indexOf(item)
 state.itemFromId=id=>state.mappings[id]
 
@@ -15,7 +26,7 @@ state.fromLocalStorage=function(data) {
 }
 state.toLocalStorage=function(data) {
     let indexes = data.map(i=>state.mappings.indexOf(i))
-    let newData = new Array(12).fill(0);
+    let newData = new Array(Math.ceil(state.mappings.length/6)*6).fill(0);
     indexes.forEach(i=>newData[i]=1)
     return group(newData).map(i=>state.digits[parseInt(i.join(""),2)]).join("")
 }

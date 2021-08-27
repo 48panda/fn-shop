@@ -1,18 +1,41 @@
 import React, { Component } from 'react'
 import FortniteItem from './Item';
+import state from './variables';
 
 export class DisplayItem extends Component {
     constructor(props) {
         super(props)
-    
+        let isOwned = (target,arr) => target.every(v => arr.includes(v));
         this.state = {
-             data:props.data
+             data:props.data,
+             owned:isOwned(props.data.items.map(e=>e.id),state.owned),
+             rerender:this.props.render
         }
     this.clicked=this.clicked.bind(this)
     }
     
     clicked() {
-        console.log(this.state.data.items.map(e=>e.id))
+        console.log(state.owned)
+        console.log(this.state.owned)
+        let items=this.state.data.items.map(e=>e.id)
+        if (this.state.owned) {
+            state.owned = state.owned.filter(e=>!items.includes(e))
+        } else {
+            state.owned = state.owned.filter(e=>!items.includes(e)).concat(items)
+            console.log(state.owned.filter(e=>!items.includes(e)).concat(items))
+        }
+        if (state.settings.trackOwned) {
+            localStorage.setItem("OwnedItems",state.toLocalStorage(state.owned))
+            console.log("stored")
+        }
+        this.state.rerender()
+    }
+    componentDidUpdate() {
+        let isOwned = (target,arr) => target.every(v => arr.includes(v));
+        if (isOwned(this.state.data.items.map(e=>e.id),state.owned)!==this.state.owned) {
+            this.setState({owned:isOwned(this.state.data.items.map(e=>e.id),state.owned)})
+            console.log("CHANGE OWNED",isOwned(this.state.data.items.map(e=>e.id),state.owned))
+        }
     }
     render() {
         let banner = this.props.data.banner
@@ -36,7 +59,7 @@ export class DisplayItem extends Component {
         let nda = {scalings:{}}
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (!this.props.data.newDisplayAsset) {
-            return <div onClick={this.clicked}><div  className={`item ${this.props.data.tileSize}${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)=="CreatorCollabSeries"?"doIcon":""}`} style={{
+            return <div onClick={this.clicked}><div  className={`${this.tate.owned?"owned ":""}istem ${this.props.data.tileSize}${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)=="CreatorCollabSeries"?"doIcon":""}`} style={{
                 top:this.props.data.y - this.props.first.y +80,
                 left:this.props.data.x - this.props.first.x + 50,
                 "--height":`${data.size[1]}px`,
@@ -82,7 +105,7 @@ export class DisplayItem extends Component {
         } else {
         return (
             <div onClick={this.clicked}>
-                {<FortniteItem lastSeenString={lastSeenString} index={this.props.n % this.props.data.newDisplayAsset.materialInstances.length} {...this.props}/>}
+                {<FortniteItem owned={this.state.owned} lastSeenString={lastSeenString} index={this.props.n % this.props.data.newDisplayAsset.materialInstances.length} {...this.props}/>}
                 {banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}
             </div>
         )}

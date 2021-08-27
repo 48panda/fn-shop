@@ -6,7 +6,7 @@ export class FortniteItem extends Component {
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (this.props.data.newDisplayAsset) {
         let nda = this.props.data.newDisplayAsset.materialInstances[this.props.index]
-        return (<div  className={"item "+this.props.data.tileSize+" "+((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)+(nda.flags.bIsCreatorCollabSeries?" doIcon":"")+(nda.flags.bIsDCUSeries?" doNoise":"")+(nda.flags.bIsPlatformSeries?" doGamingLegends":"")} style={{
+        return (<div  className={`${this.props.owned ? "owned " : ""}item ${this.props.data.tileSize} ${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value}${nda.flags.bIsCreatorCollabSeries ? " doIcon" : ""}${nda.flags.bIsDCUSeries ? " doNoise" : ""}${nda.flags.bIsPlatformSeries ? " doGamingLegends" : ""}`} style={{
             top:this.props.data.y - this.props.first.y + 80,
             left:this.props.data.x - this.props.first.x + 50,
             "--height":this.props.data.size[1]+"px",
@@ -19,16 +19,17 @@ export class FortniteItem extends Component {
             "--yoffsetcom":nda.scalings.OffsetImage_Y_Compensation || 0,
             "--max-size":Math.max(...this.props.data.size)+"px",
             "--min-size":Math.min(...this.props.data.size)+"px",
-            "--gradient-size":nda.scalings.Gradient_Size || 0,
-            "--gradient-x":nda.scalings.Gradient_Position_X || 50,
-            "--gradient-y":nda.scalings.Gradient_Position_Y || 50,
+            "--gradient-size":(nda.scalings.Gradient_Size * 2) || 0,
+            "--gradient-x":nda.scalings.Gradient_Position_X || 0,
+            "--gradient-y":nda.scalings.Gradient_Position_Y || 0,
+            "--gradient-hardness":nda.scalings.Gradient_Hardness || 0,
             "--gradient-color-in":"#"+nda.colors.Background_Color_B.substring(0,6),
             "--gradient-color-out":"#"+nda.colors.Background_Color_A.substring(0,6),
             "--spotlight-size":nda.scalings.Spotlight_Size || 100,
-            "--spotlight-x":nda.scalings.Spotlight_Position_X || -100,
-            "--spotlight-y":nda.scalings.Spotlight_Position_Y || -100,
-            "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
-            "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 50,
+            "--spotlight-x":nda.scalings.Spotlight_Position_X || 0,
+            "--spotlight-y":nda.scalings.Spotlight_Position_Y || 0,
+            "--spotlight-strength":nda.scalings.Spotlight_Intensity || 20,
+            "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 100,
             "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg",
             "--circuit-bg-1":"#"+(nda.colors.ColorCircuitBackground || "").substring(0,6),
             "--circuit-bg-2":"#"+(nda.colors.ColorCircuitBackground2 || "").substring(0,6),

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './colors.css';
 import './Items.css';
+import './owned.css';
 
 import './marvel.css';
 import './dc.css';

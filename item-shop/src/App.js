@@ -13,6 +13,7 @@ class App extends React.Component {
   constructor(){
     super()
     this.state={data:{},n:0}
+    this.rerender=this.rerender.bind(this)
   }
   componentDidMount(){
     console.log("Getting JSON")
@@ -81,7 +82,17 @@ class App extends React.Component {
         window.clearTimeout(id); // will do nothing if no timeout with id is present
     }
   }
+  rerender() {
+    var id = window.setTimeout(function() {}, 0);
+
+    while (id--) {
+        window.clearTimeout(id); // will do nothing if no timeout with id is present
+    }
+    console.log(state)
+    this.forceUpdate()
+  }
   render(){
+    console.log("RENDER APP")
     let n=this.state.n
     let lastSeen = state.settings.showLastSeen
     return (
@@ -96,7 +107,7 @@ class App extends React.Component {
       <div id="sizeSetter" style={{height:this.state.height}}>
         <div className="lagreduce">
         <div className="App" id="App">
-          {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} last={x[x.length-1]} prevsect={i==0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem lastseen={lastSeen} data={y} n={n} first={x[0]} />)} />):<></>}
+          {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} last={x[x.length-1]} prevsect={i==0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem render={this.rerender} lastseen={lastSeen} data={y} n={n} first={x[0]} />)} />):<></>}
         </div>
         </div>
       </div>

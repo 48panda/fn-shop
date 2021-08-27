@@ -1,10 +1,10 @@
-.item.doIcon .gradient {
+.doIcon .gradient {
     background: rgb(16, 104, 119);
 }
-.item.item.CreatorCollabSeries .rarity {
+.CreatorCollabSeries .rarity {
     background:var(--color-icon-series);
 }
-.item.doIcon .SpecialEffects1 {
+.doIcon .SpecialEffects1 {
     background-image: radial-gradient(circle 140px ,rgb(0, 217, 255),rgb(16, 104, 119));
     width: 200%;
     height: 200%;
@@ -13,9 +13,10 @@
     margin-left: -150%;
     margin-top: -150%;
     background-size: 100%;
+    background-repeat: repeat;
     
 }
-.item.doIcon .background {
+.doIcon .background {
     filter: blur(10px);
 }
 @keyframes iconseriesanim1 {
@@ -52,7 +53,7 @@
         transform: rotate(10deg);
     }
 }
-.item.doIcon .SpecialEffects2 {
+.doIcon .SpecialEffects2 {
     animation: iconseriesanim2 10s ease 0s infinite alternate;
     background-color: rgb(49,208,214);
     display: inline;
@@ -66,7 +67,7 @@
     -ms-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
-.item.doIcon .SpecialEffects2::after {
+.doIcon .SpecialEffects2::after {
     content: '';
     position: absolute;
     top: 0;
@@ -81,7 +82,7 @@
     transform: skew(1deg, 0deg);
     background-color: inherit;
 }
-.item.doIcon .SpecialEffects2::before {
+.doIcon .SpecialEffects2::before {
     content: '';
     position: absolute;
     top: 0;
@@ -96,7 +97,7 @@
     transform: skew(-1deg, 0deg);
     background-color: inherit;
 }
-.item.doIcon .SpecialEffects3 {
+.doIcon .SpecialEffects3 {
     animation: iconseriesanim3 5s ease -7s infinite alternate;
     background-color: rgb(49,208,214);
     display: inline;
@@ -110,7 +111,7 @@
     -ms-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
-.item.doIcon .SpecialEffects3::after {
+.doIcon .SpecialEffects3::after {
     content: '';
     position: absolute;
     top: 0;
@@ -125,7 +126,7 @@
     transform: skew(1deg, 0deg);
     background-color: inherit;
 }
-.item.doIcon .SpecialEffects3::before {
+.doIcon .SpecialEffects3::before {
     content: '';
     position: absolute;
     top: 0;
@@ -141,7 +142,7 @@
     background-color: inherit;
 }
 
-.item.doIcon .SpecialEffects4 {
+.doIcon .SpecialEffects4 {
     animation: iconseriesanim4 7.5s ease -7s infinite alternate;
     background-color: rgb(49,208,214);
     display: inline;
@@ -155,7 +156,7 @@
     -ms-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
 }
-.item.doIcon .SpecialEffects4::after {
+.doIcon .SpecialEffects4::after {
     content: '';
     position: absolute;
     top: 0;
@@ -170,7 +171,7 @@
     transform: skew(0.5deg, 0deg);
     background-color: inherit;
 }
-.item.doIcon .SpecialEffects4::before {
+.doIcon .SpecialEffects4::before {
     content: '';
     position: absolute;
     top: 0;

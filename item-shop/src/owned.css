@@ -1,0 +1,22 @@
+.owned .cost *{
+  display: none;
+}
+.owned .cost {
+    background-color: rgb(20,120,87);
+}
+.owned:hover .cost {
+    background-color: rgb(20,120,87);
+}
+.owned .cost::after {
+    content:"OWNED";
+    font-weight: bolder;
+    font-family: Roboto;
+    text-transform: uppercase;
+    text-overflow: "";
+    white-space: nowrap !important;
+    overflow: visible;
+    color: rgb(142,255,195);
+    position: relative;
+    bottom: 3px;
+    right: 5px;
+}
