@@ -38,7 +38,8 @@ export class FortniteItem extends Component {
             "--circuit-lines-1":"#"+(nda.colors.ColorCircuitLines || "").substring(0,6),
             "--circuit-lines-2":"#"+(nda.colors.ColorCircuitLines2 || "").substring(0,6),
             "--circuit-size":nda.scalings.SizeCircuitPattern,
-            "--circuit-skew":radians_to_degrees(nda.scalings.Skew)
+            "--circuit-skew":radians_to_degrees(nda.scalings.Skew),
+            "--last-seen":"'"+this.props.lastSeenString+"'"
 
             }}>
                 <div className="clickDetect"></div>
@@ -56,7 +57,7 @@ export class FortniteItem extends Component {
             <div className="offer"></div>
             <div className="rarity"></div>
             <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
-            <div className="cost"><p><span className="lastseen">{this.props.lastSeenString}</span><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
+            <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
             
                 
             </div>

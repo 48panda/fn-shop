@@ -82,7 +82,8 @@ export class DisplayItem extends Component {
                 "--spotlight-y":nda.scalings.Spotlight_Position_Y || -100,
                 "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
                 "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 50,
-                "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg"
+                "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg",
+                "--last-seen":"'"+this.props.lastSeenString+"'"
     
                 }}>
                 <div className="clickDetect"></div>

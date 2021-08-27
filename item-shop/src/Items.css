@@ -103,6 +103,24 @@ html {
   background-color: rgb(250,250,250);
   height:74px;
 }
+.cost:before {
+  content: var(--last-seen);
+  font-weight: bolder;
+  font-family: Roboto;
+  text-transform: uppercase;
+  text-overflow: "";
+  white-space: nowrap !important;
+  overflow: visible;
+  color: white;
+  float: left;
+  transform: translate(10px);
+}
+.item:hover .cost:before {
+  color:black;
+}
+.item.owned .cost:before {
+  color:white !important;
+}
 .item:hover .nameSegment:before {
   -webkit-transform: skew(0deg, -1.4320961841646deg);
   -ms-transform: skew(0deg, -1.4320961841646deg);
