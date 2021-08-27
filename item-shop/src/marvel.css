@@ -1,4 +1,4 @@
-.item.MarvelSeries .SpecialEffects1 {
+MarvelSeries .SpecialEffects1 {
     background:red;
     mask-image:url("./images/MarvelMaskR.png");
     -webkit-mask-image:url("./images/MarvelMaskR.png");
@@ -14,7 +14,7 @@
     display:block;
   }
   
-.item.MarvelSeries .SpecialEffects2 {
+.MarvelSeries .SpecialEffects2 {
     background:red;
     mask-image:url("./images/MarvelMaskG.png");
     -webkit-mask-image:url("./images/MarvelMaskG.png");
@@ -29,7 +29,7 @@
     top: auto;
     display:block;  
   }
-.item.MarvelSeries .rarity {
+.MarvelSeries .rarity {
     background:var(--color-marvel-series);
 }
   @keyframes marvel {

@@ -1,0 +1,5 @@
+item-shop/*.JSON
+item-shop/public/*.JSON
+*.bat
+item-shop/public/*.svg
+*.md

@@ -26,7 +26,7 @@ export class Locker extends Component {
   }
     render() {
         return (
-            <>
+            <div className="lockerpage">
               <div className="tabs">
                 <div className="tabin">
                   <FNLink href="/options"><p>settings</p></FNLink>
@@ -37,7 +37,7 @@ export class Locker extends Component {
               <div className="lockerItems">
                {this.state.owned.map(e=><LockerIcon key={e} data={this.state.all[e.toLowerCase()]} />)}
               </div>
-            </>
+            </div>
         )
     }
 }

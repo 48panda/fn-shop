@@ -1,11 +1,12 @@
 .lockerItems {
     margin-top: 200px;
+    white-space: normal !important;
 }
 .lockerItem {
     width: 150px;
     height: 150px;
     overflow: hidden;
-    display: block;
+    display: inline-block;
     margin: 15px;
     position: relative;
 }
@@ -18,5 +19,27 @@
     z-index: 100;
     background-image: var(--image);
     background-size: contain;
-    
+}
+.lockerItem .SpecialEffects4 {
+    position: relative;
+}
+.lockerpage {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(6,74,157);
+    top: 0px;
+    position: absolute;
+    height:fit-content;
+}
+.raritylocker {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    height: 10px;
+    z-index: 101;
+    opacity: 0.8;
+}
+.background {
+    width: 100%;
+    height: 100%;
 }

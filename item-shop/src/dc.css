@@ -1,9 +1,11 @@
-.item.DCUSeries .rarity {
+.DCUSeries .rarity {
     background:var(--color-dc-series);
 }
 .doNoise .SpecialEffects1 {
     background-color: var(--gradient-color-in);
     display: block;
+    width: 100%;
+    height:100%;
 }
 .doNoise .SpecialEffects2 {
     background-color: var(--gradient-color-in);
@@ -11,6 +13,8 @@
     -webkit-mask-image: url("./images/NoiseR.png");
     mask-image: url("./images/NoiseR.png");
     display: block;
+    width: 100%;
+    height:100%;
 }
 .doNoise .SpecialEffects3 {
     background-color: var(--gradient-color-in);
@@ -18,6 +22,8 @@
     -webkit-mask-image: url("./images/NoiseG.png");
     mask-image: url("./images/NoiseG.png");
     display: block;
+    width: 100%;
+    height:100%;
 }
 .doNoise .SpecialEffects4 {
     background-color: var(--gradient-color-in);
@@ -25,4 +31,6 @@
     -webkit-mask-image: url("./images/NoiseB.png");
     mask-image: url("./images/NoiseB.png");
     display: block;
+    width: 100%;
+    height:100%;
 }

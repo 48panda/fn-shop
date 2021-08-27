@@ -23,10 +23,10 @@
     0% {        transform: translate(050%,060%) translate(000%,000%)}
     20% {       transform: translate(050%,060%) translate(030%,020%)}
     30% {       transform: translate(050%,060%) translate(040%,010%)}
-    40% {       transform: translate(050%,060%) translate(020%,-30%)}
-    50% {       transform: translate(050%,060%) translate(-10%,-15%)}
-    60% {       transform: translate(050%,060%) translate(-30%,000%)}
-    80% {       transform: translate(050%,060%) translate(-15%,000%)}
+    40% {       transform: translate(050%,060%) translate(020%,000%)}
+    50% {       transform: translate(050%,060%) translate(000%,030%)}
+    60% {       transform: translate(050%,060%) translate(030%,030%)}
+    80% {       transform: translate(050%,060%) translate(030%,000%)}
     100% {      transform: translate(050%,060%) translate(000%,000%)}
 }
 @keyframes iconseriesanim2 {
