@@ -3,8 +3,8 @@
     white-space: normal !important;
 }
 .lockerItem {
-    width: 150px;
-    height: 150px;
+    width: 124px;
+    height: 156px;
     overflow: hidden;
     display: inline-block;
     margin: 15px;
@@ -13,12 +13,24 @@
 .lockerItem *{
     position: absolute;
 }
+.lockerItem.doIcon .background{
+    background: rgb(16, 104, 119);
+}
+.lockerItem:hover {
+    border: rgb(255,245,0) solid 4px;
+    margin: 11px;
+}
 .lockerItem .lockerpic {
     width: 100%;
     height: 100%;
     z-index: 100;
     background-image: var(--image);
-    background-size: contain;
+    background-size: 156px;
+    background-position: center;
+    transition: 0.2s;
+}
+.lockerItem:hover .lockerpic {
+    background-size: 172px;
 }
 .lockerItem .SpecialEffects4 {
     position: relative;
@@ -35,11 +47,35 @@
     width: 100%;
     position: absolute;
     bottom: 0px;
-    height: 10px;
     z-index: 101;
-    opacity: 0.8;
+}
+.raritylocker.bottom {
+    opacity: 0.7;
 }
 .background {
     width: 100%;
     height: 100%;
+}
+.raritylocker.top {
+    opacity: 1;
+    bottom: 10px;
+    transform: skewY(-4.61deg);
+    height:6px;
+    transition: 0.2s;
+}
+.lockerItem:hover .raritylocker.top {
+    bottom: 5px;
+}
+.raritylocker.top::before {
+    opacity: 0;
+}
+.raritylocker {
+    height:5px;
+}
+.raritylocker::before {
+    transform: skewY(-4.61deg);
+    height: 20px;
+}
+.lockerItem .background {
+    background: rgb(32,105,199);
 }

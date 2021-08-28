@@ -4,7 +4,7 @@ import json
 x = requests.get('https://fortnite-api.com/v2/cosmetics/br')
 x = json.loads(x.text)
 x =  x["data"]
-blacklist=['banner','contrail','emoji','loadingscreen','music','spray','toy']
+blacklist=['banner']
 backbling=['backpack','petcarrier','pet']
 
 items=[]

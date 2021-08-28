@@ -17,7 +17,7 @@
     
 }
 .doIcon .background {
-    filter: blur(10px);
+    filter: url("#sharpBlur");
 }
 @keyframes iconseriesanim1 {
     0% {        transform: translate(050%,060%) translate(000%,000%)}

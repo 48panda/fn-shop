@@ -1,21 +1,21 @@
 .offer {
     background-image:var( --offerURL );
-    --ZoomsAdded:calc(var(--Zoom1) + var(--Zoom2));
+    --ZoomsAdded:calc(var(--Zoom1) + max(var(--Zoom2) , calc(0 - var(--Zoom2))));
     --ZoomsDivided:calc(var(--ZoomsAdded) / 200);
-    --ZoomPercent:calc(var(--ZoomsDivided) + 1);
+    --ZoomPercent:calc(var(--ZoomsDivided) + 0.9);/*1*/
+    background-size: calc(var(--ZoomPercent) * var(--max-size));
+    background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
+    background-position-y: calc(20% + calc(calc(calc(var(--yoffsetcom) + var(--yoffset)) * var(--height)) / 200));
+}
+.character .offer {
+    --ZoomsAdded:calc(var(--Zoom1) + var(--Zoom2));
     background-size: calc(var(--ZoomPercent) * var(--height));
     background-origin: 50% 50%;
     background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
-    background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--width)) / 200);
+    background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--height)) / 200);
 }
 .item:hover .offer {
-  background-image:var( --offerURL );
-  --ZoomsAdded:calc(var(--Zoom1) + var(--Zoom2));
-  --ZoomsDivided:calc(var(--ZoomsAdded) / 200);
-  --ZoomPercent:calc(var(--ZoomsDivided) + 1.05);
-  background-size: calc(var(--ZoomPercent) * var(--height));
-  background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
-  background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--width)) / 200);
+  --ZoomPercent:calc(calc(var(--ZoomsDivided) + 0.9) * 1.05);
 }
 .lastseen {
   position: absolute;
@@ -70,10 +70,10 @@ html {
 }
 
 .item .gradient {
-    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--height)) / 100) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
+    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at calc(var(--gradient-x) * 1%) calc(calc(100 - var(--gradient-y)) * 1%), var(--gradient-color-in),var(--gradient-color-out));
 }
 .item:hover .gradient {
-  background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--height)) / 90) at calc(var(--gradient-x) * 1%) calc(var(--gradient-y) * 1%), var(--gradient-color-in),var(--gradient-color-out));
+  background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 90) at calc(var(--gradient-x) * 1%) calc(calc(100 - var(--gradient-y)) * 1%), var(--gradient-color-in),var(--gradient-color-out));
 }
 .item .gradient.bright {
   filter:brightness(calc(calc(var(--spotlight-strength) / 100) + 0.8));

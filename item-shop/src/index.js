@@ -55,13 +55,13 @@ $('*').on('wheel', function(event) {
         Section = Math.min(Section, $("#App").children().length - 1)
         }
         let app = document.getElementById("App")
-        app.style.transform = `translateY(${-(Section * 650)}px)`
+        app.style.transform = `translateY(${-(Section * 650)-200}px)`
         window.scrollTo({top:Section*100})
     }
   });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode><svg class="hideSvgSoThatItSupportsFirefox"><filter id="sharpBlur"><feGaussianBlur stdDeviation="5"></feGaussianBlur><feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0"></feColorMatrix><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></svg>
     <FNRouter/>
   </React.StrictMode>,
   document.getElementById('root')

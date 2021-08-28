@@ -5,7 +5,7 @@ var cookie = new Cookie();
 let state={owned:[],mappings:[],settings:{allowCookies:cookie.get("allowCookies")==="true",showLastSeen:cookie.get("showLastSeen")==="true",trackOwned:cookie.get("trackOwned")==="true"}}
 const arrayToObject = (arr, key) => Object.assign({}, ...arr.map(item => ({[item[key].toLowerCase()]: item})))
 
-$.getJSON('/mappings.json').then(data=>{state.mappings=data.data;console.log(state.fromLocalStorage("F4"))
+$.getJSON('/mappings.json').then(data=>{state.mappings=data.data
 if (state.settings.trackOwned) {
     state.owned=state.fromLocalStorage(localStorage.getItem("OwnedItems"))
 }
@@ -28,6 +28,10 @@ state.toLocalStorage=function(data) {
     let indexes = data.map(i=>state.mappings.indexOf(i))
     let newData = new Array(Math.ceil(state.mappings.length/6)*6).fill(0);
     indexes.forEach(i=>newData[i]=1)
+    newData[511]=1
+    newData[1542]=1
+    newData[2243]=1
+    newData[3209]=1
     return group(newData).map(i=>state.digits[parseInt(i.join(""),2)]).join("")
 }
 

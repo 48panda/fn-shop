@@ -23,7 +23,8 @@ export class LockerIcon extends Component {
                 "--graidient-color-out":"#0075e9"
             }}>
                 {}
-                <div className="rarity raritylocker"></div>
+                <div className="rarity raritylocker bottom"></div>
+                <div className="rarity raritylocker top"></div>
                 <div className="lockerpic"></div>
                 <div className="background">
                     <div className="SpecialEffects1"></div>
