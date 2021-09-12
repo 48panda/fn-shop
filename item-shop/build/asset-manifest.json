@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e44f4816.chunk.css",
+    "main.js": "/static/js/main.60c72826.chunk.js",
+    "main.js.map": "/static/js/main.60c72826.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b43a6c15.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b43a6c15.js.map",
+    "static/js/2.2ecd00c3.chunk.js": "/static/js/2.2ecd00c3.chunk.js",
+    "static/js/2.2ecd00c3.chunk.js.map": "/static/js/2.2ecd00c3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e44f4816.chunk.css.map": "/static/css/main.e44f4816.chunk.css.map",
+    "static/js/2.2ecd00c3.chunk.js.LICENSE.txt": "/static/js/2.2ecd00c3.chunk.js.LICENSE.txt",
+    "static/media/gaminglegends.css": "/static/media/CircuitR.31a9d60d.png",
+    "static/media/marvel.css": "/static/media/MarvelMaskR.26884fef.png",
+    "static/media/dc.css": "/static/media/NoiseR.598257f5.png",
+    "static/media/starwars.css": "/static/media/T_Ui_ColumbusSeries_512.c0a4bb59.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b43a6c15.js",
+    "static/js/2.2ecd00c3.chunk.js",
+    "static/css/main.e44f4816.chunk.css",
+    "static/js/main.60c72826.chunk.js"
+  ]
+}
