@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Section from './Section';
 import DisplayItem from './DisplayItem';
 
+
 import state from './variables';
 import NavBar from './navbar';
 
@@ -14,6 +15,7 @@ class App extends React.Component {
     this.state={data:{},n:0}
     this.rerender=this.rerender.bind(this)
   }
+  //heyy there i just needed to push some changes!
   componentDidMount(){
     console.log("Getting JSON")
     $.getJSON('https://fortnite-api.com/v2/shop/br').then(data=>{
