@@ -45,7 +45,8 @@ jobs:
 
       - name: "Push to other branch"
         run : |
-          git push -d -f origin deployment
+          git checkout deployment
+          git pull
           git status
           git pull
           git add --all
