@@ -48,4 +48,5 @@ jobs:
           git status
           git add --all
           git commit -m "Update deployment branch"
-          git subtree push --prefix item-shop/build -u origin deployment
+          cd item-ship
+          git subtree push --prefix build -u origin deployment
