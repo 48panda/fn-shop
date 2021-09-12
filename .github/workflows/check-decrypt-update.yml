@@ -20,12 +20,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
-
       - run: |
           cd item-shop
           python3 buildmappings.py
+
+      - name: Build
+        run: |
+          cd item-shop
+          npm run build
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
           add: '--all'
