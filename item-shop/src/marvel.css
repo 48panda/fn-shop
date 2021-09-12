@@ -1,9 +1,9 @@
-MarvelSeries .SpecialEffects1 {
+.doMarvel .SpecialEffects1 {
     background:red;
     mask-image:url("./images/MarvelMaskR.png");
     -webkit-mask-image:url("./images/MarvelMaskR.png");
     transform: rotate(calc(0deg - var(--marvel-angle)));
-    mask-size: 200px 500px;
+    mask-size: 200px 512px;
     -webkit-mask-size: 200px 512px;
     background-repeat: repeat;
     width: 2048px;
@@ -13,8 +13,10 @@ MarvelSeries .SpecialEffects1 {
     top: auto;
     display:block;
   }
-  
-.MarvelSeries .SpecialEffects2 {
+.doMarvel.lockerItem .background {
+  background: radial-gradient(darkred,black);
+}
+.doMarvel .SpecialEffects2 {
     background:red;
     mask-image:url("./images/MarvelMaskG.png");
     -webkit-mask-image:url("./images/MarvelMaskG.png");

@@ -1,21 +1,21 @@
-.offer {
+.item .offer {
     background-image:var( --offerURL );
-    --ZoomsAdded:calc(var(--Zoom1) + max(var(--Zoom2) , calc(0 - var(--Zoom2))));
-    --ZoomsDivided:calc(var(--ZoomsAdded) / 200);
-    --ZoomPercent:calc(var(--ZoomsDivided) + 0.9);/*1*/
-    background-size: calc(var(--ZoomPercent) * var(--max-size));
-    background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
-    background-position-y: calc(20% + calc(calc(calc(var(--yoffsetcom) + var(--yoffset)) * var(--height)) / 200));
-}
-.character .offer {
     --ZoomsAdded:calc(var(--Zoom1) + var(--Zoom2));
-    background-size: calc(var(--ZoomPercent) * var(--height));
+    --ZoomsDivided:calc(calc(var(--ZoomsAdded) / 200) + 1);
+    --ZoomPercent:var(--ZoomsDivided);/*1*/
+    background-size: calc(var(--ZoomPercent) * min(var(--max-size),550px));
+    background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
+    background-position-y: calc(50% - calc(calc(calc(var(--yoffsetcom) + var(--yoffset)) * var(--height)) / 200));
+}
+.item.character .offer {
+    --ZoomsDivided:var(--max-size);
+    background-size: var(--ZoomPercent);
     background-origin: 50% 50%;
     background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
     background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--height)) / 200);
 }
 .item:hover .offer {
-  --ZoomPercent:calc(calc(var(--ZoomsDivided) + 0.9) * 1.05);
+  --ZoomPercent:calc(var(--ZoomsDivided)* 1.05) !important;
 }
 .lastseen {
   position: absolute;
@@ -70,15 +70,21 @@ html {
 }
 
 .item .gradient {
-    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at calc(var(--gradient-x) * 1%) calc(calc(100 - var(--gradient-y)) * 1%), var(--gradient-color-in),var(--gradient-color-out));
+    --padding-x:calc(calc(var(--max-size) - var(--width)) / 2);
+    --padding-y:calc(calc(var(--max-size) - var(--height)) / 2);
+    --gradient-pos-x:calc(calc(calc(var(--gradient-x) * var(--max-size)) / 100) - var(--padding-x));
+    --gradient-pos-y:calc(calc(calc(var(--gradient-y) * var(--max-size)) / 100) - var(--padding-y));
+    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at var(--gradient-pos-x) var(--gradient-pos-y), var(--gradient-color-in),var(--gradient-color-in) calc(1% * var(--gradient-hardness)),var(--gradient-color-out));
 }
 .item:hover .gradient {
-  background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 90) at calc(var(--gradient-x) * 1%) calc(calc(100 - var(--gradient-y)) * 1%), var(--gradient-color-in),var(--gradient-color-out));
+  background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at var(--gradient-pos-x) var(--gradient-pos-y), var(--gradient-color-in),var(--gradient-color-in) calc(1% * var(--gradient-hardness)),var(--gradient-color-out));
 }
 .item .gradient.bright {
+  --spotlight-pos-x:calc(calc(calc(var(--spotlight-x) * var(--max-size)) / 100) - var(--padding-x));
+  --spotlight-pos-y:calc(calc(calc(var(--spotlight-y) * var(--max-size)) / 100) - var(--padding-y));
   filter:brightness(calc(calc(var(--spotlight-strength) / 100) + 0.8));
-  mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--height)) / 100) at calc(var(--spotlight-x) * 1%) calc(var(--spotlight-y) * 1%),black,calc(var(--spotlight-hardness) * 1%),transparent);
-  -webkit-mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--height)) / 100) at calc(var(--spotlight-x) * 1%) calc(var(--spotlight-y) * 1%),black,calc(var(--spotlight-hardness) * 1%),transparent);
+  mask-image:         radial-gradient(circle calc(calc(var(--spotlight-size) * var(--max-size)) / 100) at var(--spotlight-pos-x) var(--spotlight-pos-y),black,black calc(var(--spotlight-hardness) * 1%),transparent);
+  -webkit-mask-image: radial-gradient(circle calc(calc(var(--spotlight-size) * var(--max-size)) / 100) at var(--spotlight-pos-x) var(--spotlight-pos-y),black,black calc(var(--spotlight-hardness) * 1%),transparent);
 }
 .item.off {
   visibility: hidden;

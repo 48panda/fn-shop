@@ -1,0 +1,33 @@
+"Gradient_Hardness": 8.927761,     |=|  "Gradient_Hardness": 8.927761,
+"Gradient_Position_X": 38.52512,   |=|  "Gradient_Position_X": 38.52512,
+"Gradient_Position_Y": 2.023017,   |=|  "Gradient_Position_Y": 2.023017,
+"Gradient_Size": 102.05809,        |=|  "Gradient_Size": 102.05809,
+"Spotlight_Hardness": 11.231588,   |=|  "Spotlight_Hardness": 11.231588,
+"Spotlight_Intensity": 133.40498,  |<|  "Spotlight_Intensity": 147.90582,
+"Spotlight_Position_X": 50.750088, |>|  "Spotlight_Position_X": 48.844193,
+"Spotlight_Position_Y": 29.56261,  |<|  "Spotlight_Position_Y": 33.757843,
+"Spotlight_Size": 43.694412,       |=|  "Spotlight_Size": 43.694412,
+"FallOffColor_Fill_Percent": 80,   |=|  "FallOffColor_Fill_Percent": 80,
+"FallOffColor_Postion": 61.34002,  |=|  "FallOffColor_Postion": 61.34002,
+"OffsetImage_X": -0.5,             |=|  "OffsetImage_X": -0.5
+"OffsetImage_Y": 0.5,              |<|  "OffsetImage_Y": 2.5,
+"ZoomImage_Percent": 4,            |<|  "ZoomImage_Percent": 80,
+"RefractionDepthBias": 0           |=|  "RefractionDepthBias": 0
+
+"FallOffColor_DecayRate": 1.22,    |=| "FallOffColor_DecayRate": 1.22,
+"FallOffColor_Fill_Percent": 25,   |=| "FallOffColor_Fill_Percent": 25,
+"FallOffColor_Postion": 51.082165, |=| "FallOffColor_Postion": 51.082165,
+"OffsetImage_X": 0,                |>| "OffsetImage_X": -1.904762,
+"OffsetImage_Y": 0,                |=| "OffsetImage_Y": 0,
+"OffsetImage_Y_Compensation": 0,   |=| "OffsetImage_Y_Compensation": 0,
+"ZoomImage_Percent": 11.428571,    |<| "ZoomImage_Percent": 100,
+"RefractionDepthBias": 0,          |=| "RefractionDepthBias": 0,
+"Gradient_Hardness": 16.252045,    |=| "Gradient_Hardness": 16.252045,
+"Gradient_Position_X": 46.244217,  |=| "Gradient_Position_X": 46.244217,
+"Gradient_Position_Y": 69.7416,    |=| "Gradient_Position_Y": 69.7416,
+"Gradient_Size": 65.389366,        |=| "Gradient_Size": 73.26658,
+"Spotlight_Intensity": 97.8607,    |=| "Spotlight_Intensity": 97.8607,
+"Spotlight_Position_X": 99.5242,   |=| "Spotlight_Position_X": 99.5242,
+"Spotlight_Position_Y": 39.79276,  |=| "Spotlight_Position_Y": 16.831144,
+"Spotlight_Size": 66.67            |=| "Spotlight_Size": 66.67
+

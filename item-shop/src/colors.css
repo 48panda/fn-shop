@@ -4,11 +4,15 @@
     --color-dc-series: rgb(0,140,243);
     --color-gaming-legends: rgb(146,138,225);
     --color-shadow-series: rgb(255,255,255);
-    --color-star-wars-series: rgb(255,223,0);
+    --color-star-wars-series: rgb(57,119,255);
     --color-slurp-series: rgb(46,250,248);
     --color-legendary: rgb(252,150,65);
     --color-epic: rgb(239,57,255);
     --color-rare: rgb(0,255,252);
     --color-uncommon: rgb(175,254,0);
     --color-common: rgb(195,202,207);
+}
+
+.ShadowSeries .rarity{
+    background-color: var(--color-shadow-series) !important;
 }

@@ -2,11 +2,11 @@
     background:var(--color-gaming-legends);
 }
 @keyframes gamingLegendsHighlight {
-    from {background-position-y: 200px}
+    from {background-position-y: 156px}
     to   {background-position-y: 0px}
 }
-.lockerItem.PlatformSeries .background {
-    background: radial-gradient(#a335a0,black);
+.lockerItem.PlatformSeries .background,.PlatformSeries .gradient,.PlatformSeries:hover .gradient {
+    background: radial-gradient(circle,#a335a0,black);
 }
 .doGamingLegends .SpecialEffects1,.doGamingLegends .SpecialEffects2,.doGamingLegends .SpecialEffects3,.doGamingLegends .SpecialEffects4,.doGamingLegends .SpecialEffects5,.doGamingLegends .SpecialEffects6,.doGamingLegends .falloff {
     height: 200%;
@@ -31,7 +31,7 @@
 .doGamingLegends .SpecialEffects3{
     display: block;
     -webkit-mask-image: url("./images/CircuitG.png");
-    background-image: repeating-linear-gradient( transparent 0px ,var(--circuit-highlight) 10px,transparent 50px,transparent 200px);
+    background-image: repeating-linear-gradient(transparent 0px, var(--circuit-highlight) 10px,transparent 70px,transparent 156px);
     background-repeat: repeat;
     height: 200%;
     -webkit-mask-size: calc(var(--circuit-size) * 200px);
@@ -43,7 +43,7 @@
 .doGamingLegends .SpecialEffects4{
     display: block;
     -webkit-mask-image: url("./images/CircuitR.png");
-    background-image: repeating-linear-gradient( var(--circuit-highlight) 0px,transparent 50px,transparent 200px);
+    background-image: repeating-linear-gradient( var(--circuit-highlight) 0px,transparent 70px,transparent 156px);
     background-repeat: repeat;
     -webkit-mask-size: calc(var(--circuit-size) * 200px);
     transform: skewX(calc(calc(0 - var(--circuit-skew)) * 1deg)) skewY(calc(calc(0 - var(--circuit-skew)) * 1deg)) scale(2);
@@ -51,6 +51,3 @@
     -webkit-mask-composite: destination-in;
     animation: 2s infinite gamingLegendsHighlight linear;
 }
-.item.doGamingLegends:hover .gradient {
-    background-image:radial-gradient(circle calc(calc(var(--gradient-size) * var(--max-size)) / 100) at calc(var(--gradient-x) * 1%) calc(calc(100 - var(--gradient-y)) * 1%), var(--gradient-color-in),var(--gradient-color-out));
-  }

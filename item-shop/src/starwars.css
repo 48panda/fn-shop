@@ -1,0 +1,8 @@
+.ColumbusSeries .rarity {
+    background-color: var(--color-star-wars-series);
+}
+.ColumbusSeries .SpecialEffects1 {
+    display: block;
+    background-image: url("images/T_Ui_ColumbusSeries_512.png");
+    background-size: cover;
+}

@@ -1,12 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import $, { data } from 'jquery';
+import $ from 'jquery';
 import Section from './Section';
 import DisplayItem from './DisplayItem';
 
 import FNLink from './FNLink';
 import state from './variables';
+import NavBar from './navbar';
 
 var _ = require('underscore');
 class App extends React.Component {
@@ -57,6 +57,7 @@ class App extends React.Component {
             smallTileParity=0
           }
         }
+        console.log((i.bundle||i.items[0]).name)
         if (i.tileSize === "Small"){yoffset=smallTileParity*(tileSizes["Small"][1]+yspacesmall)}
         i.x = xpos+50
         i.y = ypos+yoffset+230
@@ -97,17 +98,11 @@ class App extends React.Component {
     let lastSeen = state.settings.showLastSeen
     return (
       <>
-    <div className="tabs">
-      <div className="tabin">
-        <FNLink href="/options"><p>settings</p></FNLink>
-        <FNLink href="/" className="active"><p>item shop</p></FNLink>
-        <FNLink href="/locker"><p>locker</p></FNLink>
-      </div>
-    </div>
+    <NavBar selected="shop" />
       <div id="sizeSetter" style={{height:this.state.height}}>
         <div className="lagreduce">
-        <div className="App" id="App">
-          {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} last={x[x.length-1]} prevsect={i==0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem render={this.rerender} lastseen={lastSeen} data={y} n={n} first={x[0]} />)} />):<></>}
+        <div className="App" id="App" style={{transform:"translateY(calc(0px - 600px + 50vh))"}}>
+          {this.state.data.items?this.state.data.items.map((x,i,arr)=><Section data={x[0].section} first={x[0]} last={x[x.length-1]} prevsect={i===0?"":arr[i-1][0].section.name} items={x.sort((b,a)=>a.sortPriority-b.sortPriority).map(y=><DisplayItem render={this.rerender} lastseen={lastSeen} data={y} n={n} first={x[0]} />)} />):<></>}
         </div>
         </div>
       </div>

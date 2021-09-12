@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Cookie from 'universal-cookie'
 
 import FNLink from './FNLink';
+import NavBar from './navbar';
 import state from './variables';
 
 var cookie = new Cookie();
@@ -42,13 +43,7 @@ export class Settings extends Component {
     render() {
         return (
             <>
-            <div className="tabs">
-              <div className="tabin">
-                <FNLink href="/options" className="active"><p>settings</p></FNLink>
-                <FNLink href="/"><p>item shop</p></FNLink>
-                <FNLink href="/locker"><p>locker</p></FNLink>
-              </div>
-            </div>
+            <NavBar selected="settings" />
             <div className="FormStuff">
                 <label>
                   Show last seen date:
@@ -72,7 +67,8 @@ export class Settings extends Component {
             All cookies that may be used by the site at this time:<ul>
               <li>allowCookies</li>
               <li>showLastSeen</li>
-              <li>trackOwned</li></ul></p></div>}
+              <li>trackOwned</li>
+              <li>locker.selected.*</li></ul></p></div>}
             </>
         )
     }

@@ -24,9 +24,9 @@ export class DisplayItem extends Component {
             state.owned = state.owned.filter(e=>!items.includes(e)).concat(items)
             console.log(state.owned.filter(e=>!items.includes(e)).concat(items))
         }
+        state.owned=state.owned.sort(state.sortorder)
         if (state.settings.trackOwned) {
             localStorage.setItem("OwnedItems",state.toLocalStorage(state.owned))
-            console.log("stored")
         }
         this.state.rerender()
     }
@@ -34,7 +34,6 @@ export class DisplayItem extends Component {
         let isOwned = (target,arr) => target.every(v => arr.includes(v));
         if (isOwned(this.state.data.items.map(e=>e.id),state.owned)!==this.state.owned) {
             this.setState({owned:isOwned(this.state.data.items.map(e=>e.id),state.owned)})
-            console.log("CHANGE OWNED",isOwned(this.state.data.items.map(e=>e.id),state.owned))
         }
     }
     render() {
@@ -59,7 +58,7 @@ export class DisplayItem extends Component {
         let nda = {scalings:{}}
         const radians_to_degrees = rad => (rad * 180.0) / Math.PI
         if (!this.props.data.newDisplayAsset) {
-            return <div onClick={this.clicked}><div  className={`${this.tate.owned?"owned ":""}istem ${this.props.data.tileSize}${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)=="CreatorCollabSeries"?"doIcon":""}`} style={{
+            return <div onClick={this.clicked}><div  className={`${this.state.owned?"owned ":""}item ${this.props.data.tileSize} ${(this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value} ${((this.props.data.items[0].series || {}).backendValue || this.props.data.items[0].rarity.value)==="CreatorCollabSeries"?"doIcon":""}`} style={{
                 top:this.props.data.y - this.props.first.y +80,
                 left:this.props.data.x - this.props.first.x + 50,
                 "--height":`${data.size[1]}px`,
@@ -75,6 +74,7 @@ export class DisplayItem extends Component {
                 "--gradient-size":nda.scalings.Gradient_Size || 75,
                 "--gradient-x":nda.scalings.Gradient_Position_X || 50,
                 "--gradient-y":nda.scalings.Gradient_Position_Y || 33,
+                "--gradient-hardness":0,
                 "--gradient-color-in":"#89d8ff",
                 "--gradient-color-out":"#237fd5",
                 "--spotlight-size":nda.scalings.Spotlight_Size || 100,
@@ -83,7 +83,7 @@ export class DisplayItem extends Component {
                 "--spotlight-strength":nda.scalings.Spotlight_Intensity || 100,
                 "--spotlight-hardness":nda.scalings.Spotlight_Hardness || 50,
                 "--marvel-angle":radians_to_degrees(nda.scalings["Streak Angle"])+"deg",
-                "--last-seen":"'"+this.props.lastSeenString+"'"
+                "--last-seen":"'"+lastSeenString+"'"
     
                 }}>
                 <div className="clickDetect"></div>
@@ -101,7 +101,7 @@ export class DisplayItem extends Component {
                 <div className="offer"></div>
                 <div className="rarity"></div>
                 <div className="nameSegment"><p>{(this.props.data.bundle||this.props.data.items[0]).name}</p></div>
-                <div className="cost"><p><span className="lastseen">{lastSeenString}</span><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img width="0" height="0" src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
+                <div className="cost"><p><del>{this.props.data.finalPrice!==this.props.data.regularPrice?this.props.data.regularPrice.toLocaleString(undefined):""}</del>&#160;&#160;&#160;{this.props.data.finalPrice.toLocaleString(undefined)}</p><img src="https://fortnite-api.com/images/vbuck.png" alt="V-Bucks"/></div>
             </div>{banner?<div style={{top:this.props.data.y - this.props.first.y+80,left:this.props.data.x - this.props.first.x+50}} className={`banner ${banner.intensity}`}>{banner.value}</div>:null}</div>
         } else {
         return (

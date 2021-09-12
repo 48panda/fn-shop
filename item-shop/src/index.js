@@ -9,13 +9,15 @@ import './owned.css';
 import './marvel.css';
 import './dc.css';
 import './icon.css';
+import './gaminglegends.css';
+import './starwars.css';
 
 import './legendary.css';
 import './epic.css';
 import './rare.css';
 import './uncommon.css';
 import './common.css';
-import './gaminglegends.css';
+
 
 import './images/MarvelMaskR.png'
 import './images/MarvelMaskG.png'
@@ -25,7 +27,6 @@ import './images/NoiseB.png'
 
 import FNRouter from './router';
 import $ from 'jquery'
-let state = require('./variables.js')
 
 let last = +new Date();
 let Section = 0;
@@ -45,7 +46,7 @@ $('*').on('wheel', function(event) {
     };
     let now = +new Date();
    
-    if (delta.y != 0) {
+    if (delta.y !== 0) {
       if (now-last>500) {
         last = now
         let ud = Math.round(delta.y / Math.abs(delta.y))
@@ -55,13 +56,13 @@ $('*').on('wheel', function(event) {
         Section = Math.min(Section, $("#App").children().length - 1)
         }
         let app = document.getElementById("App")
-        app.style.transform = `translateY(${-(Section * 650)-200}px)`
+        app.style.transform = `translateY(calc(${-(Section * 650)-600}px + 50vh))`
         window.scrollTo({top:Section*100})
     }
   });
 
 ReactDOM.render(
-  <React.StrictMode><svg class="hideSvgSoThatItSupportsFirefox"><filter id="sharpBlur"><feGaussianBlur stdDeviation="5"></feGaussianBlur><feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0"></feColorMatrix><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></svg>
+  <React.StrictMode><svg className="hideSvgSoThatItSupportsFirefox" style={{height:0}}><filter id="sharpBlur"><feGaussianBlur stdDeviation="5"></feGaussianBlur><feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0"></feColorMatrix><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></svg>
     <FNRouter/>
   </React.StrictMode>,
   document.getElementById('root')

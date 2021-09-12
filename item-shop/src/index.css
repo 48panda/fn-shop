@@ -86,15 +86,16 @@ p {
   white-space: nowrap !important;
   overflow: visible;
 }
-div {  white-space: nowrap !important;
+div {  white-space: nowrap;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
+.searcher * {
+  white-space: normal !important;
+}
 
 
 

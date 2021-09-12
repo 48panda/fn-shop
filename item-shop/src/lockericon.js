@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export class LockerIcon extends Component {
     render() {
-        let data=(this.props.data || {})
-        let seriestoclass = {PlatformSeries:" doGamingLegends",DCUSeries:" doNoise",CreatorCollabSeries:" doIcon"}
+        let data=(this.props.data || {images:{icon:{}}})
+        let seriestoclass = {PlatformSeries:" doGamingLegends",DCUSeries:" doNoise",CreatorCollabSeries:" doIcon",MarvelSeries:" doMarvel"}
         return (
-            <div className={`lockerItem ${data.backendSeries || data.rarity}${seriestoclass[data.backendSeries || data.rarity] || ""}`} style={{
-                "--image":`url('${data.images.icon.url}')`,
+            <div className={`lockerItem ${this.props.small?"small ":""}${this.props.mainscreen?"mainscreen ":""}${data.backendSeries || data.rarity}${seriestoclass[data.backendSeries || data.rarity] || ""}`} style={{
+                "--image":`url('${(data.images.icon||data.images.smallIcon).url}')`,
                 "--circuit-bg-1":'#a335a0',
                 "--circuit-bg-2":'#0059ff',
                 "--circuit-dots":'#a56dff',
@@ -20,7 +20,8 @@ export class LockerIcon extends Component {
                 "--max-size":"150px",
                 "--min-size":"150px",
                 "--gradient-color-in":"#0075e9",
-                "--graidient-color-out":"#0075e9"
+                "--graidient-color-out":"#0075e9",
+                "--marvel-angle":"0.6rad"
             }}>
                 {}
                 <div className="rarity raritylocker bottom"></div>
