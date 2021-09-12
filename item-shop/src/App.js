@@ -4,7 +4,6 @@ import $ from 'jquery';
 import Section from './Section';
 import DisplayItem from './DisplayItem';
 
-import FNLink from './FNLink';
 import state from './variables';
 import NavBar from './navbar';
 
