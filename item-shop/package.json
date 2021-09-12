@@ -29,6 +29,7 @@
       "react-app/jest"
     ]
   },
+  "homepage":"https://48panda48.github.io/fn/",
   "browserslist": {
     "production": [
       ">0.2%",
