@@ -49,5 +49,5 @@ jobs:
           git pull
           git add --all
           git commit -m "Update deployment branch"
-          git pull
+          git pull --rebase
           git subtree push --prefix item-shop/build origin deployment
