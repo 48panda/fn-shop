@@ -21,7 +21,8 @@ jobs:
         run: npm install
 
       - name: Build
-      run: npm run build
+        run: npm run build
+        
       - run: |
           cd item-shop
           python3 buildmappings.py
