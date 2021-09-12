@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Cookie from 'universal-cookie'
 
-import FNLink from './FNLink';
 import NavBar from './navbar';
 import state from './variables';
 

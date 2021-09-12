@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-import $, { data } from 'jquery'
-import FNLink from './FNLink'
+import $ from 'jquery'
 
 import state from './variables'
 
