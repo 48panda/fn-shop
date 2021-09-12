@@ -20,12 +20,6 @@ jobs:
       - run: |
           cd item-shop
           python3 buildmappings.py
-
-      - name: Build
-        run: |
-          cd item-shop
-          npm install
-          npm run build
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
           add: '.github/'
@@ -36,11 +30,21 @@ jobs:
           pull_strategy: 'NO-PULL'
           push: true
           signoff: false
-      - name: "Push to other branch"
-        run : |
+      
+      - name: Checkout
+        run: |
           git config user.email "george.48panda@gmail.com"
           git config user.name "48panda48"
           git checkout -b deployment
+
+      - name: Build
+        run: |
+          cd item-shop
+          npm install
+          npm run build
+
+      - name: "Push to other branch"
+        run : |
           git add --all
           git commit -m "Update deployment branch"
           git subtree push --prefix item-shop/build origin deployment
