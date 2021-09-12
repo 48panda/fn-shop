@@ -45,6 +45,7 @@ jobs:
 
       - name: "Push to other branch"
         run : |
+          git status
           git add --all
           git commit -m "Update deployment branch"
           git subtree push --prefix item-shop/build -u origin deployment
