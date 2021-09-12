@@ -43,10 +43,10 @@ jobs:
           npm run build
           cp -a staticbuild/. build/
 
-      - name: "Push to other branch"
+      - name: "Push to other branch "
         run : |
-          git checkout deployment
           git pull
+          git checkout deployment
           git status
           git pull
           git add --all
