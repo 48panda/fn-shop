@@ -46,6 +46,7 @@ jobs:
       - name: "Push to other branch "
         run : |
           git pull
+          git stash
           git checkout deployment
           git status
           git pull
