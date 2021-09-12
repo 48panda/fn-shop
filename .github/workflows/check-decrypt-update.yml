@@ -18,7 +18,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd item-shop
+          npm install
 
       - run: |
           cd item-shop
@@ -27,7 +29,6 @@ jobs:
       - name: Build
         run: |
           cd item-shop
-          npm i react-scripts -g
           npm run build
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
