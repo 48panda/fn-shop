@@ -35,7 +35,6 @@ jobs:
         run: |
           git config user.email "george.48panda@gmail.com"
           git config user.name "48panda48"
-          git checkout -b deployment
 
       - name: Build
         run: |
@@ -48,5 +47,4 @@ jobs:
           git status
           git add --all
           git commit -m "Update deployment branch"
-          cd item-ship
-          git subtree push --prefix build -u origin deployment
+          git subtree push --prefix item-shop/build origin deployment
