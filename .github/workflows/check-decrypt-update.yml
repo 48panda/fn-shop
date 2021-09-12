@@ -49,4 +49,4 @@ jobs:
           git pull
           git add --all
           git commit -m "Update deployment branch"
-          git subtree push -f --prefix item-shop/build origin deployment
+          git subtree push --prefix item-shop/build origin deployment
