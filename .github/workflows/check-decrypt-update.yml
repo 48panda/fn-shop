@@ -41,7 +41,7 @@ jobs:
           cd item-shop
           npm install
           npm run build
-          cp -a /staticbuild/. /build/
+          cp -a staticbuild/. build/
 
       - name: "Push to other branch"
         run : |
