@@ -50,4 +50,4 @@ jobs:
           git add --all
           git commit -m "Update deployment branch"
           git pull --rebase
-          git push origin `git subtree split --prefix item-shop/build master`:deployment --force
+          git push origin `git subtree split --prefix item-shop/build`:deployment --force
