@@ -1,4 +1,4 @@
-name: nightly-test
+name: nightly-teste
 on:
   schedule:
     - cron:  '0 0 * * *'
