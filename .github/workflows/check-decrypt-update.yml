@@ -1,4 +1,4 @@
-name: nightly-test
+name: nightly-test-hi-there
 on:
   schedule:
     - cron:  '0 0 * * *'
@@ -50,4 +50,4 @@ jobs:
           git add --all
           git commit -m "Update deployment branch"
           git pull --rebase
-          git subtree push --prefix item-shop/build origin deployment
+          git push origin `git subtree split --prefix item-shop/build main`:deployment --force
