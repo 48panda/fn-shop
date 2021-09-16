@@ -2,7 +2,22 @@ import $ from 'jquery'
 import Cookie from 'universal-cookie'
 var cookie = new Cookie();
 
-let state={all:null,callAfterAllLoaded:()=>null,owned:[],mappings:[],selected:{skin:"CID_764_Athena_Commando_F_Loofah",backbling:"BID_527_Loofah",pickaxe:"Pickaxe_ID_399_LoofahFemale1H",glider:"Glider_ID_118_Squishy",contrail:"Trails_ID_088_Informer",emote1:"EID_Loofah",emote2:"EID_Loofah",emote3:"EID_Loofah",emote4:"EID_Loofah",emote5:"EID_Loofah",emote6:"EID_Loofah",wrap:"Wrap_263_RainbowLava",music:"MusicPack_065_FortlishRap",loadingscreen:"LSID_120_Ashton"},settings:{allowCookies:cookie.get("allowCookies")==="true",showLastSeen:cookie.get("showLastSeen")==="true",trackOwned:cookie.get("trackOwned")==="true"}}
+let state={all:null,callAfterAllLoaded:()=>null,owned:[],mappings:[],selected:{
+    skin:"cid_npc_athena_commando_f_rebirthdefault_henchman",
+backbling:"cid_npc_athena_commando_f_rebirthdefault_henchman",
+pickaxe:"defaultpickaxe",
+glider:"umbrella_silver",
+contrail:"cid_npc_athena_commando_f_rebirthdefault_henchman",
+emote1:"eid_dancemoves"
+,emote2:"eid_dancemoves",
+emote3:"eid_dancemoves",
+emote4:"eid_dancemoves",
+emote5:"eid_dancemoves",
+emote6:"eid_dancemoves",
+wrap:"eid_dancemoves",
+music:"eid_dancemoves",
+loadingscreen:"eid_dancemoves"
+},settings:{allowCookies:cookie.get("allowCookies")==="true",showLastSeen:cookie.get("showLastSeen")==="true",trackOwned:cookie.get("trackOwned")==="true"}}
 if (state.settings.trackOwned) {
     let storelist=["skin","backbling","pickaxe","glider","contrail","emote1","emote2","emote3","emote4","emote5","emote6","wrap","music","loadingscreen"]
     for (let i of storelist) {
@@ -11,7 +26,7 @@ if (state.settings.trackOwned) {
     }
 }
 const arrayToObject = (arr, key) => Object.assign({}, ...arr.map(item => ({[item[key].toLowerCase()]: item})))
-let rarityOrder=['EFortRarity::Common','EFortRarity::Unommon','EFortRarity::Rare','EFortRarity::Epic','EFortRarity::Legendary','EFortRarity::Mythic']
+let rarityOrder=['EFortRarity::Common','EFortRarity::Uncommon','EFortRarity::Rare','EFortRarity::Epic','EFortRarity::Legendary','EFortRarity::Mythic']
 state.sortorder = (a_,b_)=>{
 let a=state.all[a_.toLowerCase()];
 let b=state.all[b_.toLowerCase()];
@@ -31,7 +46,7 @@ $.getJSON('https://fortnite-api.com/cosmetics/br').then(data =>{
   state.loadingscreens=Object.fromEntries(Object.entries(state.all).filter(([key, value]) => value.type==="loadingscreen"))
   let names=arrayToObject(data.data,"name")
   state.keys =Object.keys(names).sort().map(e=>{e=names[e];if(!e.description){return null}if(e.type==="banner"){return null}return{name:e.name, value:e.id}}).filter(e=>e)
-$.getJSON('./mappings.json').then(async data=>{
+$.getJSON('/mappings.json').then(async data=>{
 state.mappings=data.data
 if (state.settings.trackOwned) {
     state.owned=state.fromLocalStorage(localStorage.getItem("OwnedItems"))
