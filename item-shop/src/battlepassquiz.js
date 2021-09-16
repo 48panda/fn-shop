@@ -25,7 +25,7 @@ export class BattlePassQuiz extends Component {
     }
     async componentDidMount() {
         state.callAfterAllLoaded=()=>this.setState({render:1})
-        $.getJSON(`/bp${this.props.match.params.pass}.json`).then(data_=>{
+        $.getJSON(`./bp${this.props.match.params.pass}.json`).then(data_=>{
             let data=data_
             data.rewards=data.rewards.filter(e=>e.item.id).filter(e=>e.item.name!=="V-bucks").filter(e=>e.item.type.id!=="misc").filter(e=>e.item.type.id!=="cosmeticvariant").filter(e=>e.item.type.id!=="bannertoken").filter(e=>e.item.type.id!=="itemaccess")
             this.setState({data:data,

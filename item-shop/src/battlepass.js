@@ -15,7 +15,7 @@ class OneBattlePass extends Component {
         }
     }
     async componentDidMount() {
-        $.getJSON(`/bp${this.props.pass}.json`).then(data=>{
+        $.getJSON(`./bp${this.props.pass}.json`).then(data=>{
             this.setState({data:data,
                 maxtier:Math.max(...data.rewards.map(e=>e.tier))
             })
