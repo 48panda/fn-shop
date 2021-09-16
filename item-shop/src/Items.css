@@ -5,14 +5,13 @@
     --ZoomPercent:var(--ZoomsDivided);/*1*/
     background-size: calc(var(--ZoomPercent) * min(var(--max-size),550px));
     background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
-    background-position-y: calc(50% - calc(calc(calc(var(--yoffsetcom) + var(--yoffset)) * var(--height)) / 200));
 }
 .item.character .offer {
     --ZoomsDivided:var(--max-size);
     background-size: var(--ZoomPercent);
     background-origin: 50% 50%;
     background-position-x: calc(50% + calc(calc(var(--xoffset) * var(--width)) / 100));
-    background-position-y: calc(calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--height)) / 200);
+    background-position-y: calc(0 - calc(calc(var(--yoffset) + var(--yoffsetcom)) * var(--height)) / 200);
 }
 .item:hover .offer {
   --ZoomPercent:calc(var(--ZoomsDivided)* 1.05) !important;

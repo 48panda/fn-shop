@@ -65,11 +65,11 @@ export class FNRouter extends Component {
         return (
             <Router history={history}>
               <Switch>
-                <Route exact path="/"><App /></Route>
-                <Route path="/options"><Settings/></Route>
-                <Route path="/locker"><LockerPath/></Route>
-                <Route exact path="/bp"><BattlePass/></Route>
-                <Route exact path="/bp/findlevel/:pass" component={props => <BattlePassQuiz {...props} />}></Route>
+                <Route exact path="/fn/"><App /></Route>
+                <Route path="/fn/options"><Settings/></Route>
+                <Route path="/fn/locker"><LockerPath/></Route>
+                <Route exact path="/fn/bp"><BattlePass/></Route>
+                <Route exact path="/fn/bp/findlevel/:pass" component={props => <BattlePassQuiz {...props} />}></Route>
               </Switch>
             </Router>
         )
