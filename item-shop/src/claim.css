@@ -1,0 +1,44 @@
+.css-2b097c-container {
+    position: relative !important;
+    box-sizing: border-box !important;
+    display: block;
+    height: 0;
+    width: 300px;
+    padding-left: 5px;
+    margin-top: 20px ;
+}
+.css-2b097c-container:nth-child(1) {
+    top: -2px;
+}
+.rangeslider {
+    height: 20px;
+}
+.rangeslider *{
+    height: 20px;
+}
+.css-2b097c-container .css-yk16xz-control {
+    height: 50px;
+    padding: 0;
+}
+#center {
+    margin-top: 50px;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+#search {
+    display: block;
+    height: 50px;
+    transform: translateY(-4px);
+    width: 300px;
+}
+#center label p {
+    text-align: right;
+    transform:translateX(-300px);
+}
+#somewhitespace {
+    white-space: normal;
+}

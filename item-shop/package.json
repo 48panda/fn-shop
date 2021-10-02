@@ -10,8 +10,10 @@
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
     "react-select-search": "^3.0.8",
     "underscore": "^1.13.1",
     "universal-cookie": "^4.0.4",
@@ -29,7 +31,7 @@
       "react-app/jest"
     ]
   },
-  "homepage":"https://48panda48.github.io/",
+  "homepage": "https://48panda48.github.io/",
   "browserslist": {
     "production": [
       ">0.2%",

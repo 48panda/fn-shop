@@ -8,6 +8,7 @@ import App from './App.js';
 import Settings from './settings.js';
 import Locker from './locker.js';
 import BattlePassQuiz from './battlepassquiz.js';
+import ClaimPage from './claim.js';
 
 function LockerPath() {
   let match = useRouteMatch();
@@ -68,6 +69,7 @@ export class FNRouter extends Component {
                 <Route exact path="/"><App /></Route>
                 <Route path="/options"><Settings/></Route>
                 <Route path="/locker"><LockerPath/></Route>
+                <Route path="/claim"><ClaimPage/></Route>
                 <Route exact path="/bp"><BattlePass/></Route>
                 <Route exact path="/bp/findlevel/:pass" component={props => <BattlePassQuiz {...props} />}></Route>
               </Switch>

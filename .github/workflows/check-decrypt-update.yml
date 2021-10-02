@@ -27,7 +27,7 @@ jobs:
           author_email: george.48panda@gmail.com
           default_author: 'github_actor'
           message: 'BOT: Updated mappings'
-          pull_strategy: 'NO-PULL'
+          pull: 'NO-PULL'
           push: true
           signoff: false
       
