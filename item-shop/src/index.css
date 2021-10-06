@@ -17,6 +17,9 @@ a {
   justify-content: center;
   text-align: center;
 }
+button.hidemeplz {
+  display: none;
+}
 a>p{margin:4px;padding-right: 20px;}
 a>p:last-child {
   padding-right: 0px;
