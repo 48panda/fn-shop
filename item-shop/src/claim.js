@@ -85,7 +85,7 @@ export class ClaimPage extends Component {
                     </label>
                 <button id="search" onClick={this.search}>Search</button>
                 </div>
-                {this.state.matches?this.state.matches.map(e=><button onClick={(e)=>{e.preventDefault();console.log("hi!");this.setState({matches:this.state.matches.filter(i=>i!==e)})}}><LockerIcon data={e}/></button>):null}
+                {this.state.matches?this.state.matches.map(e=><button style={{width:0}} onClick={(e)=>{e.preventDefault();console.log("hi!");this.setState({matches:this.state.matches.filter(i=>i!==e)})}}><LockerIcon data={e}/></button>):null}
                 {this.state.matches.length!==0?<button onClick={this.finish} className="yes" style={{width:"100vw",height:"fit-content"}}><h1>Add all of these to my locker.</h1></button>:null}
                 {this.state.matches.length!==0?<button onClick={this.remove} className="no" style={{width:"100vw",height:"fit-content"}}><h1>Remove all of these from my locker.</h1></button>:null}
 
