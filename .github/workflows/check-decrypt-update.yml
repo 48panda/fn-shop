@@ -20,9 +20,9 @@ jobs:
       - run: |
           cd item-shop
           python3 buildmappings.py
-      - uses: EndBug/add-and-commit # You can change this to use a specific version
+      - uses: EndBug/add-and-commit@7 # You can change this to use a specific version
         with:
-          add: '.github/'
+          add: '.github/*'
           author_name: 48panda48
           author_email: george.48panda@gmail.com
           default_author: 'github_actor'
