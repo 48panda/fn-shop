@@ -56,7 +56,7 @@ $.getJSON('https://fortnite-api.com/cosmetics/br').then(data =>{
   state.loadingscreens=Object.fromEntries(Object.entries(state.all).filter(([key, value]) => value.type==="loadingscreen"))
   console.log(state.all)
   state.keys =Object.keys(names).sort().map(e=>{e=names[e];if(!e.description){return null}if(e.type==="banner"){return null}return{name:e.name, value:e.id}}).filter(e=>e)
-$.getJSON('./mappings.json').then(async data=>{
+$.getJSON('/fn-shop/mappings.json').then(async data=>{
 state.mappings=data.data
 if (state.settings.trackOwned) {
     state.owned=state.fromLocalStorage(localStorage.getItem("OwnedItems"))
