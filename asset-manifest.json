@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/fn-shop/static/css/main.df29cd7c.chunk.css",
+    "main.js": "/fn-shop/static/js/main.fc8ff605.chunk.js",
+    "main.js.map": "/fn-shop/static/js/main.fc8ff605.chunk.js.map",
+    "runtime-main.js": "/fn-shop/static/js/runtime-main.889577e9.js",
+    "runtime-main.js.map": "/fn-shop/static/js/runtime-main.889577e9.js.map",
+    "static/js/2.06de79c7.chunk.js": "/fn-shop/static/js/2.06de79c7.chunk.js",
+    "static/js/2.06de79c7.chunk.js.map": "/fn-shop/static/js/2.06de79c7.chunk.js.map",
+    "index.html": "/fn-shop/index.html",
+    "static/css/main.df29cd7c.chunk.css.map": "/fn-shop/static/css/main.df29cd7c.chunk.css.map",
+    "static/js/2.06de79c7.chunk.js.LICENSE.txt": "/fn-shop/static/js/2.06de79c7.chunk.js.LICENSE.txt",
+    "static/media/gaminglegends.css": "/fn-shop/static/media/CircuitR.31a9d60d.png",
+    "static/media/marvel.css": "/fn-shop/static/media/MarvelMaskR.26884fef.png",
+    "static/media/dc.css": "/fn-shop/static/media/NoiseR.598257f5.png",
+    "static/media/starwars.css": "/fn-shop/static/media/T_Ui_ColumbusSeries_512.c0a4bb59.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.889577e9.js",
+    "static/js/2.06de79c7.chunk.js",
+    "static/css/main.df29cd7c.chunk.css",
+    "static/js/main.fc8ff605.chunk.js"
+  ]
+}
